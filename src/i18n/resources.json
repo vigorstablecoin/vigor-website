@@ -1,12 +1,18 @@
 {
   "en": {
     "translation": {
-      "Using i18next": "Using i18next (EN)"
+      "Using i18next": "Using i18next (EN)",
+      "hello": "Hello and welcome to this i18n example site!",
+      "subline": "You can read some of my cool articles I wrote!",
+      "backToHome": "Back to home"
     }
   },
   "de": {
     "translation": {
-      "Using i18next": "Using i18next (DE)"
+      "Using i18next": "Using i18next (DE)",
+      "hello": "Hallo und herzlich Willkommen zu dieser i18n Beispielseite!",
+      "subline": "Lies doch ein paar coole Artikel von mir!",
+      "backToHome": "Zurück zur Startseite"
     }
   }
 }

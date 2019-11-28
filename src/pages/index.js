@@ -1,27 +1,23 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { useTranslation } from "react-i18next";
 import LocalizedLink from "../components/localizedLink"
-import useTranslations from "../components/useTranslations"
 
-const Index = ({ data: { allMdx } }) => {
+const Index = (props) => {
   // useTranslations is aware of the global context (and therefore also "locale")
   // so it'll automatically give back the right translations
-  const { hello, subline } = useTranslations()
+  const { t, i18n } = useTranslation()
+
+  console.log(`Index::render`, i18n.language, t(`hello`))
 
   return (
     <>
-      <h1>{hello}</h1>
-      <p>{subline}</p>
+      <h1>{t(`hello`)}</h1>
+      <p>{t(`subline`)}</p>
       <hr style={{ margin: `2rem 0` }} />
       <ul className="post-list">
-        {allMdx.edges.map(({ node: post }) => (
-          <li key={`${post.frontmatter.title}-${post.fields.locale}`}>
-            <LocalizedLink to={`/${post.parent.relativeDirectory}`}>
-              {post.frontmatter.title}
-            </LocalizedLink>
-            <div>{post.frontmatter.date}</div>
-          </li>
-        ))}
+        <li>Hi</li>
+        <li>Hi 2</li>
       </ul>
     </>
   )
@@ -29,28 +25,3 @@ const Index = ({ data: { allMdx } }) => {
 
 export default Index
 
-export const query = graphql`
-  query Index($locale: String!, $dateFormat: String!) {
-    allMdx(
-      filter: { fields: { locale: { eq: $locale } } }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            date(formatString: $dateFormat)
-          }
-          fields {
-            locale
-          }
-          parent {
-            ... on File {
-              relativeDirectory
-            }
-          }
-        }
-      }
-    }
-  }
-`

@@ -9,6 +9,10 @@ const withI18next = () => Comp => {
     constructor(props) {
       super(props);
 
+      this.state = {
+        locale: props.pageContext.locale,
+      }
+      
       this.i18n = setupI18next();
       this.changeLanguage();
     }
@@ -34,21 +38,37 @@ const withI18next = () => Comp => {
         } = pageContext;
 
         if (!this.i18n.hasResourceBundle(lng, "translation")) {
+          console.log(`withI18next::adding resources`, lng, translation)
           this.i18n.addResourceBundle(lng, "translation", translation);
         }
       }
     };
 
     componentDidUpdate(prevProps) {
+      console.log(`withI18next::cDU`, this.props.pageContext)
       if (this.props.pageContext.locale !== prevProps.pageContext.locale) {
         this.changeLanguage();
+        // trigger rerender only after we added resources and changed the language in i18n
+        this.setState({
+          locale: this.props.pageContext.locale,
+        })
       }
     }
 
+    componentWillReceiveProps(nextProps) {
+      console.log(`withI18next::cWRP`, nextProps.pageContext)
+      // if (this.props.pageContext.locale !== nextProps.pageContext.locale) {
+      //   this.changeLanguage();
+      // }
+    }
+
     render() {
+      const { locale } = this.state
+      console.log(`withI18next::render`, locale)
+
       return (
         <LocaleContext.Provider
-          value={{ locale: this.props.pageContext.locale }}
+          value={{ locale }}
         >
           <I18nextProvider i18n={this.i18n}>
             <Comp {...this.props} />
