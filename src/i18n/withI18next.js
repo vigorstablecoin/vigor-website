@@ -8,20 +8,17 @@ const withI18next = () => Comp => {
   class I18nHOC extends Component {
     constructor(props) {
       super(props);
-
-      this.state = {
-        locale: props.pageContext.locale,
-      }
       
       this.i18n = setupI18next();
-      this.changeLanguage();
     }
 
     changeLanguage = () => {
       const { pageContext } = this.props;
 
       this.addResources(pageContext);
-      this.i18n.changeLanguage(pageContext.locale);
+      if(this.i18n.language !== pageContext.locale) {
+        this.i18n.changeLanguage(pageContext.locale);
+      }
     };
 
     // @see https://www.i18next.com/overview/api#resource-handling
@@ -44,31 +41,25 @@ const withI18next = () => Comp => {
       }
     };
 
-    componentDidUpdate(prevProps) {
-      console.log(`withI18next::cDU`, this.props.pageContext)
-      if (this.props.pageContext.locale !== prevProps.pageContext.locale) {
-        this.changeLanguage();
-        // trigger rerender only after we added resources and changed the language in i18n
-        this.setState({
-          locale: this.props.pageContext.locale,
-        })
-      }
-    }
-
-    componentWillReceiveProps(nextProps) {
-      console.log(`withI18next::cWRP`, nextProps.pageContext)
-      // if (this.props.pageContext.locale !== nextProps.pageContext.locale) {
-      //   this.changeLanguage();
-      // }
-    }
+    // componentDidUpdate(prevProps) {
+    //   console.log(`withI18next::cDU`, this.props.pageContext)
+    //   if (this.props.pageContext.locale !== prevProps.pageContext.locale) {
+    //     this.changeLanguage();
+    //     // trigger rerender only after we added resources and changed the language in i18n
+    //     this.setState({
+    //       locale: this.props.pageContext.locale,
+    //     })
+    //   }
+    // }
 
     render() {
-      const { locale } = this.state
+      const { locale } = this.props.pageContext
+      this.changeLanguage()
       console.log(`withI18next::render`, locale)
 
       return (
         <LocaleContext.Provider
-          value={{ locale }}
+          value={{ locale: this.props.pageContext.locale }}
         >
           <I18nextProvider i18n={this.i18n}>
             <Comp {...this.props} />

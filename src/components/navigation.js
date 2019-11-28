@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "gatsby";
+import { useTranslation } from "react-i18next";
 import LocalizedLink from "./localizedLink";
-import useTranslations from "./useTranslations";
 
 const Navigation = () => {
-  const { backToHome } = useTranslations();
+  const { t } = useTranslation();
 
   return (
     <nav>
-      <LocalizedLink to="/" aria-label={backToHome}>
+      <LocalizedLink to="/" aria-label={t(`backToHome`)}>
         Homepage
       </LocalizedLink>
       <div>
