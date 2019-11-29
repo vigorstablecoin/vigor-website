@@ -1,4 +1,8 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/04958074-ee54-4b67-844d-9f9d02e04fb0/deploy-status)](https://app.netlify.com/sites/viglp/deploys)
+
 # vigor-website
+
+[viglp.netlify.com/](https://viglp.netlify.com/)
 
 The new landing page for Vigor.
 
