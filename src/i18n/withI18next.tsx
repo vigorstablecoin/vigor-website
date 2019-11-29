@@ -3,10 +3,18 @@ import { I18nextProvider } from "react-i18next";
 import LocaleContext from "../localeContext";
 
 import setupI18next from "./setupI18next";
-
+type HocProps = {
+  pageContext: {
+    locale: string;
+    localeResources?: {
+      translation?: any
+    }
+  }
+}
 const withI18next = () => Comp => {
-  class I18nHOC extends Component {
-    constructor(props) {
+  class I18nHOC extends Component<HocProps> {
+    private i18n:any;
+    constructor(props:any) {
       super(props);
       
       this.i18n = setupI18next();
@@ -23,7 +31,7 @@ const withI18next = () => Comp => {
 
     // @see https://www.i18next.com/overview/api#resource-handling
     // `translation` is the default NS we use consistently.
-    addResources = pageContext => {
+    addResources = (pageContext:HocProps["pageContext"]) => {
       if (
         pageContext &&
         pageContext.localeResources &&
@@ -40,17 +48,6 @@ const withI18next = () => Comp => {
         }
       }
     };
-
-    // componentDidUpdate(prevProps) {
-    //   console.log(`withI18next::cDU`, this.props.pageContext)
-    //   if (this.props.pageContext.locale !== prevProps.pageContext.locale) {
-    //     this.changeLanguage();
-    //     // trigger rerender only after we added resources and changed the language in i18n
-    //     this.setState({
-    //       locale: this.props.pageContext.locale,
-    //     })
-    //   }
-    // }
 
     render() {
       const { locale } = this.props.pageContext

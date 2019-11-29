@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import { useTranslation } from "react-i18next";
 import LocalizedLink from "../components/localizedLink"
 
-const Index = (props) => {
+const Index: React.FC<{}> = (props) => {
   // useTranslations is aware of the global context (and therefore also "locale")
   // so it'll automatically give back the right translations
   const { t, i18n } = useTranslation()

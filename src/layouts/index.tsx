@@ -7,7 +7,7 @@ import Welcome from "../components/welcome";
 
 import withI18next from "../i18n/withI18next";
 
-const Layout = ({ children }) => {
+const Layout: React.FC<{}> = ({ children }) => {
   return (
     <div className="global-wrapper">
       <header className="global-header">
