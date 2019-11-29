@@ -1,16 +1,27 @@
-# Building a multilingual Gatsby site
+# vigor-website
 
-This repo is a copy of an official example approach combining few suggestions. Refections are documented into this [article about Gatsby i18n](https://kalinchernev.github.io/multilingual-gatsbyjs).
+The new landing page for Vigor.
 
-# Using i18n
+## Development
 
-https://using-i18n.netlify.com/
+Uses [Gatsby.js](https://www.gatsbyjs.org/docs/) for static site rendering.
 
-Example site that demonstrates how to build Gatsby sites with multiple languages (Internationalization / i18n) without any third-party plugins or packages. Per language a dedicated page is built (so no client-side translations) which is among other things important for SEO.
+```bash
+npm i
 
-The general information are defined in `config/i18n.js`, the translations are located in `config/translations`. The custom hook `useTranslations` pulls in these translations then (when the former is changed, the latter needs to update its GraphQL query). Due to the usage of a global layout/Context API and the passed `locale` to all pages (see `gatsby-node.js`) you know on every page which language is currently displayed. Moreover, with the usage of MDX and `gatsby-mdx` a custom component for the `<a>` tag is implemented -- this way links can stay the same for every language, without the need to manually write path prefixes.
+# local development
+npm start
 
-**Opinionated choices that were made:**
+# creating static sites
+npm run build
+```
 
-- Usage of a custom hook with GraphQL to access translations. That part can be replaced with a i18n library
-- Blogposts are defined in `blog`. The folder names are the `slug` of the page. Inside these folders there has to be an `index.mdx` file (for the default language). Any other language needs to be defined in the format `name-with-dashes.lang.mdx`
+## Transations
+
+Translations must be provided in `src/i18n/resources.json`.
+
+## Resources
+
+* [Designs](https://projects.invisionapp.com/d/main/default/?origin=v7#/console/18858395/392928819/preview?newCollabSignupFlow=0&scrollOffset=0)
+* [Project Management](https://trello.com/c/gCdojCJE/107-vigor-website-development)
+

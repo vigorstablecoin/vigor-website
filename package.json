@@ -13,9 +13,11 @@
   "dependencies": {
     "@mdx-js/mdx": "^0.20.3",
     "@mdx-js/tag": "^0.20.3",
+    "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.3.3",
     "gatsby-mdx": "^0.4.4",
     "gatsby-plugin-layout": "^1.1.6",
+    "gatsby-plugin-styled-components": "^3.1.14",
     "gatsby-plugin-typescript": "^2.1.20",
     "gatsby-source-filesystem": "^2.0.28",
     "gatsby-transformer-json": "^2.1.11",
