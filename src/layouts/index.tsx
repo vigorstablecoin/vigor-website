@@ -1,20 +1,19 @@
 import React from "react";
-
-import "../global.css";
-
-import Navigation from "../components/navigation";
-import Welcome from "../components/welcome";
-
+import Welcome from "../components/Welcome";
+import Toolbar from "../components/Toolbar";
+import GlobalStyles from "../components/GlobalStyles";
 import withI18next from "../i18n/withI18next";
 
-const Layout: React.FC<{}> = ({ children }) => {
+
+const Layout: React.FC<GlobalProps> = (props) => {
   return (
-    <div className="global-wrapper">
-      <header className="global-header">
-        <Navigation />
+    <div>
+      <GlobalStyles />
+      <header>
+        <Toolbar {...props}/>
       </header>
       <Welcome />
-      <main>{children}</main>
+      <main>{props.children}</main>
     </div>
   );
 };
