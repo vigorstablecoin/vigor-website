@@ -9,8 +9,12 @@ body {
   margin: 0;
   font-size: 16px;
   font-weight: normal;
-  color: ${theme.colors.bg};
-  background-color: ${theme.colors.white};
+  color: ${theme.colors.white};
+  background: ${`repeating-linear-gradient(to right,
+    ${theme.colors.bg} 0%, ${theme.colors.bg} 17%, ${theme.colors.bgLighter} 17%, ${theme.colors.bgLighter} calc(17% + 1px),
+    ${theme.colors.bg} calc(17% + 1px), ${theme.colors.bg} 34%, ${theme.colors.bgLighter} 34%, ${theme.colors.bgLighter} calc(34% + 1px),
+    ${theme.colors.bg} calc(34% + 1px), ${theme.colors.bg} 50%, ${theme.colors.bgLighter} 50%, ${theme.colors.bgLighter} calc(50% + 1px)
+    )`};
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -33,8 +37,7 @@ p {
 }
 
 body, * {
-  /* TODO: Add Montserrat */
-  font-family: Montserrat, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
 }
 `;

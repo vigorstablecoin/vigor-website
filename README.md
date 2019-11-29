@@ -14,6 +14,7 @@ npm start
 
 # creating static sites
 npm run build
+# deploy from `public` folder
 ```
 
 ## Transations

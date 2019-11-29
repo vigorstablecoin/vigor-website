@@ -1,19 +1,22 @@
 // TODO: get actual colors from https://github.com/vigorstablecoin/media/blob/master/readme-images/vigor-color-palette.jpg
-const white = `#ffffff`
-const bg = `#13161f`;
-const primary = `#2fe7f3`;
-const secondary = `#9100E7`;
+const white = `#ffffff`;
+const bg = `#13161E`;
+const bgLight = `#1E212E`;
+const bgLighter = `#2F3347`;
+const bgLightest = `#50587A`;
+const primary = `#4468CC`;
 
 const colors = {
-    bg,
-    white,
-    primary,
-    secondary,
+  bg,
+  bgLight,
+  bgLighter,
+  bgLightest,
+  white,
+  primary,
 };
 
-
 const theme = {
-    colors,
-}
+  colors
+};
 
 export default theme;
