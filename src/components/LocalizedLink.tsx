@@ -1,12 +1,21 @@
 import React from "react";
+import styled from "styled-components";
 import { Link } from "gatsby";
 import LocaleContext from "../localeContext";
 import locales from "../../config/i18n";
 import trim from 'lodash/trim'
+import theme from "../utils/theme";
 
 type Props = {
   to: string;
 };
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: ${props => props.theme.colors.white};
+  cursor: pointer;
+`
+
 // Use the globally available context to choose the right path
 const LocalizedLink: React.FC<Props> = ({ to, ...props }) => {
   const { locale } = React.useContext<{ locale: string }>(LocaleContext);
@@ -22,7 +31,7 @@ const LocalizedLink: React.FC<Props> = ({ to, ...props }) => {
     ? to
     : `${localeObject.path}${isIndex ? `` : `${to}`}`;
 
-  return <Link {...props} to={path} />;
+  return <StyledLink {...props} to={path} />;
 };
 
 type LocalizedChangeLanguageLinkProps = {
@@ -50,8 +59,8 @@ export const LocalizedChangeLanguageLink: React.FC<LocalizedChangeLanguageLinkPr
   const path = desiredLocaleObj.default
     ? `/${pathWithoutLanguage}`
     : `/${desiredLocale}/${pathWithoutLanguage}`;
-
-  return <Link {...props} to={path} />;
+  console.log({ path, currentPath, pathWithoutLanguage, desiredLocale })
+  return <StyledLink {...props} to={path} />;
 };
 
 export default LocalizedLink;

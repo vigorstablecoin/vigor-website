@@ -1,41 +1,50 @@
 import React from "react";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
-import { Link } from "gatsby";
 import LocalizedLink, { LocalizedChangeLanguageLink } from "./LocalizedLink";
+import VigorLogoText from "./VigorLogoText";
+import LanguageDropdown from "./LanguageDropdown";
 
-const StyledLink = styled.span`
-  margin-right: 10px;
-  cursor: pointer;
+const StyledLocalizedLink = styled(LocalizedLink)`
+  font-size: 15px;
+  line-height: 19px;
+  margin-right: 48px;
 `;
 
-const Toolbar: React.FC<GlobalProps> = props => {
+const Wrapper = styled.div`
+  display: flex;
+  width: 100%;
+  max-width: 1240px;
+  align-items: center;
+  margin: 0 auto;
+  padding: 16px;
+`;
 
+const Spacer = styled.div`
+  flex: 1 1 auto;
+`;
+
+const NavBlock = styled.nav`
+  display: flex;
+  align-items: center;
+  flex: 1 0 auto;
+`
+
+const Toolbar: React.FC<GlobalProps> = props => {
   const { t } = useTranslation();
+
   return (
-    <div>
-      <LocalizedLink to="/">
-        <StyledLink>Products</StyledLink>
-      </LocalizedLink>
-      <LocalizedLink to="/learn">
-        <StyledLink>Learn</StyledLink>
-      </LocalizedLink>
-      <LocalizedLink to="/community">
-        <StyledLink>Community</StyledLink>
-      </LocalizedLink>
-      <LocalizedLink to="/faq">
-        <StyledLink>FAQ</StyledLink>
-      </LocalizedLink>
-      <div>
-        <LocalizedChangeLanguageLink currentPath={props.path} locale="en">
-          English
-        </LocalizedChangeLanguageLink>
-        {` `}/{` `}
-        <LocalizedChangeLanguageLink currentPath={props.path} locale="de">
-          Deutsch
-        </LocalizedChangeLanguageLink>
-      </div>
-    </div>
+    <Wrapper>
+      <VigorLogoText height={55} />
+      <Spacer />
+      <NavBlock>
+        <StyledLocalizedLink to="/">Products</StyledLocalizedLink>
+        <StyledLocalizedLink to="/learn">Learn</StyledLocalizedLink>
+        <StyledLocalizedLink to="/community">Community</StyledLocalizedLink>
+        <StyledLocalizedLink to="/faq">FAQ</StyledLocalizedLink>
+        <LanguageDropdown path={props.path} />
+      </NavBlock>
+    </Wrapper>
   );
 };
 

@@ -8,7 +8,7 @@ body {
   padding: 0;
   margin: 0;
   font-size: 16px;
-  font-weight: normal;
+  font-weight: 600;
   color: ${theme.colors.white};
   background: ${`repeating-linear-gradient(to right,
     ${theme.colors.bg} 0%, ${theme.colors.bg} 17%, ${theme.colors.bgLighter} 17%, ${theme.colors.bgLighter} calc(17% + 1px),

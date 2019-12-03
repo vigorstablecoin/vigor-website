@@ -1,23 +1,42 @@
 import React from "react";
 import Helmet from "react-helmet";
-import Welcome from "../components/Welcome";
+import styled, { ThemeProvider } from "styled-components";
 import Toolbar from "../components/Toolbar";
 import GlobalStyles from "../components/GlobalStyles";
 import withI18next from "../i18n/withI18next";
+import theme from "../utils/theme";
+
+const Page = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+const PageHeader = styled.header`
+  width: 100%;
+`;
+
+const MainSection = styled.main`
+  width: 100%;
+  max-width: 1024px;
+`;
 
 const Layout: React.FC<GlobalProps> = props => {
   return (
-    <div>
-      <Helmet>
-      <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
-      </Helmet>
-      <GlobalStyles />
-      <header>
-        <Toolbar {...props} />
-      </header>
-      <Welcome />
-      <main>{props.children}</main>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Page>
+        <GlobalStyles />
+        <Helmet>
+          <link
+            href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+            rel="stylesheet"
+          />
+        </Helmet>
+        <PageHeader>
+          <Toolbar {...props} />
+        </PageHeader>
+        <MainSection>{props.children}</MainSection>
+      </Page>
+    </ThemeProvider>
   );
 };
 

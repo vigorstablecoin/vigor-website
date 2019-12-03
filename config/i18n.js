@@ -1,5 +1,4 @@
-// Only one item MUST have the "default: true" key
-
+// LCID strings https://www.science.co.il/language/Locale-codes.php
 module.exports = {
   en: {
     default: true,
@@ -19,5 +18,23 @@ module.exports = {
     ogLanguage: `de_DE`,
     defaultTitle: `i18n mit Gatsby nutzen`,
     defaultDescription: `Gatsby Beispielseite, die MDX und i18n (frei von dependencies) nutzt`,
+  },
+  zh: {
+    path: `zh`,
+    locale: `zh-CN`,
+    dateFormat: `DD.MM.YYYY`,
+    siteLanguage: `zh`,
+    ogLanguage: `zh_CN`,
+    defaultTitle: `Chinese title`,
+    defaultDescription: `Chinese description`,
+  },
+  ko: {
+    path: `ko`,
+    locale: `ko`,
+    dateFormat: `DD.MM.YYYY`,
+    siteLanguage: `ko`,
+    ogLanguage: `ko`,
+    defaultTitle: `Korean title`,
+    defaultDescription: `Korean description`,
   },
 }

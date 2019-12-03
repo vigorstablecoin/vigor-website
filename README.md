@@ -21,7 +21,7 @@ npm run build
 # deploy from `public` folder
 ```
 
-## Transations
+## Translations
 
 Translations must be provided in `src/i18n/resources.json`.
 
