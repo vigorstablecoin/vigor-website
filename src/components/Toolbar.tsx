@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   width: 100%;
   max-width: 1240px;
   align-items: center;
-  margin: 0 auto;
+  margin: 0 auto 116px auto;
   padding: 16px;
 `;
 
@@ -26,8 +26,9 @@ const Spacer = styled.div`
 
 const NavBlock = styled.nav`
   display: flex;
+  justify-content: flex-end;
   align-items: center;
-  flex: 1 0 auto;
+  flex: 0 0 auto;
 `
 
 const Toolbar: React.FC<GlobalProps> = props => {
