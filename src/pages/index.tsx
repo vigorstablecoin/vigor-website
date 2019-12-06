@@ -1,26 +1,28 @@
 import React from "react"
-import { graphql } from "gatsby"
 import { useTranslation } from "react-i18next";
-import Welcome from "../components/Welcome";
+import Hero from "../components/Hero";
+import LocalizedLink from "../components/LocalizedLink";
+import { Link } from "gatsby";
 
 const Index: React.FC<{}> = (props) => {
-  // useTranslations is aware of the global context (and therefore also "locale")
-  // so it'll automatically give back the right translations
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation();
 
   return (
     <>
-
-      <Welcome />
-      <h1>{t(`hello`)}</h1>
-      <p>{t(`subline`)}</p>
-      <ul>
-        <li>Hi</li>
-        <li>Hi 2</li>
-      </ul>
+      <Hero
+        title={ t(`Vigor Stablecoin`) }
+        content={
+          <>
+            { t(`A Borrow and Earn Community.`) }
+            <br/>
+            { t(`100% Decentralized, Peer to Peer Lending.`) }
+          </>
+        }
+        link={ <LocalizedLink to={ '/' }>{ t(`Get Involved`) }</LocalizedLink> }
+      />
     </>
   )
-}
+};
 
 export default Index
 
