@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
-import LocalizedLink, { LocalizedChangeLanguageLink } from "./LocalizedLink";
+import LocalizedLink from "./LocalizedLink";
 import VigorLogoText from "./VigorLogoText";
 import LanguageDropdown from "./LanguageDropdown";
 
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   width: 100%;
   max-width: 1240px;
   align-items: center;
-  margin: 0 auto 116px auto;
+  margin: 0 auto 71px auto;
   padding: 16px;
 `;
 
@@ -29,7 +29,7 @@ const NavBlock = styled.nav`
   justify-content: flex-end;
   align-items: center;
   flex: 0 0 auto;
-`
+`;
 
 const Toolbar: React.FC<GlobalProps> = props => {
   const { t } = useTranslation();
@@ -39,8 +39,8 @@ const Toolbar: React.FC<GlobalProps> = props => {
       <VigorLogoText height={55} />
       <Spacer />
       <NavBlock>
-        <StyledLocalizedLink to="/">Products</StyledLocalizedLink>
-        <StyledLocalizedLink to="/learn">Learn</StyledLocalizedLink>
+        <StyledLocalizedLink to="/">{t(`Products`)}</StyledLocalizedLink>
+        <StyledLocalizedLink to="/learn">{t(`Learn`)}</StyledLocalizedLink>
         <StyledLocalizedLink to="/community">Community</StyledLocalizedLink>
         <StyledLocalizedLink to="/faq">FAQ</StyledLocalizedLink>
         <LanguageDropdown path={props.path} />
