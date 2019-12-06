@@ -1,20 +1,22 @@
 {
   "en": {
     "translation": {
-      "Using i18next": "Using i18next (EN)",
       "hello": "Hello and welcome to this i18n example site!",
       "subline": "You can read some of my cool articles I wrote!",
       "backToHome": "Back to home",
-      "faq": "Frequently asked Questions"
+      "faq": "Frequently asked Questions",
+      "Products": "Products",
+      "Learn": "Learn"
     }
   },
   "de": {
     "translation": {
-      "Using i18next": "Using i18next (DE)",
       "hello": "Hallo und herzlich Willkommen zu dieser i18n Beispielseite!",
       "subline": "Lies doch ein paar coole Artikel von mir!",
       "backToHome": "Zurück zur Startseite",
-      "faq": "Oft gestellte Fragen"
+      "faq": "Oft gestellte Fragen",
+      "Products": "Produkte",
+      "Learn": "Lernen"
     }
   }
 }
