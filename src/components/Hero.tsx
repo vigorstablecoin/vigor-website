@@ -29,12 +29,13 @@ const HeroContent = styled.h2`
 // @todo: goal of this is to present any kind of Link (Localized or not) in the same way
 const HeroLinkWrap = styled.div`
   a {
-    padding: 11px 41px;
+    padding: 11px 50px;
     background-color: #ccc;
     border-radius: 4px;
     background-color: #4468CC;
     color: #fff;
     text-decoration: none;
+    font-size: 14px;
   }
 `;
 

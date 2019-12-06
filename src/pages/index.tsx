@@ -2,7 +2,6 @@ import React from "react"
 import { useTranslation } from "react-i18next";
 import Hero from "../components/Hero";
 import LocalizedLink from "../components/LocalizedLink";
-import { Link } from "gatsby";
 
 const Index: React.FC<{}> = (props) => {
   const { t } = useTranslation();
