@@ -32,6 +32,12 @@ button, input[type="submit"], input[type="reset"] {
   cursor: pointer;
 }
 
+a {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
 p {
   margin: 0;
 }

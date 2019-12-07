@@ -1,16 +1,16 @@
 import React from "react";
-import ComingSoon from "../components/ComingSoon";
 import { useTranslation } from "react-i18next";
+import ComingSoon from "../components/ComingSoon";
 
-const Learn: React.FC<{}> = props => {
+const Products: React.FC<{}> = props => {
   const { t } = useTranslation();
 
   return (
     <React.Fragment>
-      <h1>{t(`learn`)}</h1>
+      <h1>{t(`products`)}</h1>
       <ComingSoon />
     </React.Fragment>
   );
 };
 
-export default Learn;
+export default Products;
