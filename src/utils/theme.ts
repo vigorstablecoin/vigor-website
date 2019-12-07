@@ -5,6 +5,7 @@ const bgLight = `#1E212E`;
 const bgLighter = `#2F3347`;
 const bgLightest = `#50587A`;
 const primary = `#4468CC`;
+const secondary = `#6DE4F0`;
 
 const colors = {
   bg,
@@ -13,6 +14,7 @@ const colors = {
   bgLightest,
   white,
   primary,
+  secondary,
 };
 
 const theme = {

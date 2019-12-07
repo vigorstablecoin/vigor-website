@@ -7,7 +7,7 @@ const HeroWrapper = styled.div`
 
 const HeroTitle = styled.h1`
   text-transform: uppercase;
-  color: #4468cc;
+  color: ${props => props.theme.colors.primary};
   font-size: 56px;
   font-weight: 700;
   margin: 16px 0;
@@ -16,7 +16,7 @@ const HeroTitle = styled.h1`
 const HeroTitleSeparator = styled.div`
   width: 81px;
   height: 2px;
-  background-color: #6de4f0;
+  background-color: ${props => props.theme.colors.secondary};
 `;
 
 const HeroContent = styled.h2`
@@ -26,14 +26,12 @@ const HeroContent = styled.h2`
 `;
 
 // @todo: this should come from a global base button style
-// @todo: goal of this is to present any kind of Link (Localized or not) in the same way
 const HeroLinkWrap = styled.div`
   a {
     padding: 11px 50px;
-    background-color: #ccc;
     border-radius: 4px;
-    background-color: #4468CC;
-    color: #fff;
+    background-color: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.white};
     text-decoration: none;
     font-size: 14px;
   }
