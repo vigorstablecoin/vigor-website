@@ -5,8 +5,12 @@
       "subline": "You can read some of my cool articles I wrote!",
       "backToHome": "Back to home",
       "faq": "Frequently asked Questions",
-      "Products": "Products",
-      "Learn": "Learn"
+      "faqShort": "FAQ",
+      "community": "Community",
+      "learn": "Learn",
+      "products": "Products",
+      "comingSoon": "Coming Soon",
+      "buyVig": "Buy VIG"
     }
   },
   "de": {
@@ -15,8 +19,12 @@
       "subline": "Lies doch ein paar coole Artikel von mir!",
       "backToHome": "Zurück zur Startseite",
       "faq": "Oft gestellte Fragen",
-      "Products": "Produkte",
-      "Learn": "Lernen"
+      "faqShort": "FAQ",
+      "community": "Community",
+      "learn": "Erfahre mehr",
+      "products": "Produkte",
+      "comingSoon": "Demnächst",
+      "buyVig": "Kaufe VIG"
     }
   }
 }
