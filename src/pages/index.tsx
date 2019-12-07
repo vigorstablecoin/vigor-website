@@ -17,7 +17,7 @@ const Index: React.FC<{}> = (props) => {
             { t(`100% Decentralized, Peer to Peer Lending.`) }
           </>
         }
-        link={ <LocalizedLink to={ '/' }>{ t(`Get Involved`) }</LocalizedLink> }
+        link={ <LocalizedLink to={ '/community' }>{ t(`Get Involved`) }</LocalizedLink> }
       />
     </>
   )
