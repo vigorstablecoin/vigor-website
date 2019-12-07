@@ -6,10 +6,10 @@ const Products: React.FC<{}> = props => {
   const { t } = useTranslation();
 
   return (
-    <>
+    <React.Fragment>
       <h1>{t(`products`)}</h1>
       <ComingSoon />
-    </>
+    </React.Fragment>
   );
 };
 
