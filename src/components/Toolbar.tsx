@@ -42,7 +42,7 @@ const Toolbar: React.FC<GlobalProps> = props => {
       </StyledLocalizedLink>
       <Spacer />
       <NavBlock>
-        <StyledLocalizedLink to="/">{t(`products`)}</StyledLocalizedLink>
+        <StyledLocalizedLink to="/products">{t(`products`)}</StyledLocalizedLink>
         <StyledLocalizedLink to="/learn">{t(`learn`)}</StyledLocalizedLink>
         <StyledLocalizedLink to="/community">{t(`community`)}</StyledLocalizedLink>
         <StyledLocalizedLink to="/faq">{t(`faqShort`)}</StyledLocalizedLink>
