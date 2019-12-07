@@ -53,7 +53,6 @@ const StyledTabPanel = styled(TabPanel)`
     }
 `;
 
-
 const Hero: React.FC = props => {
   const { t } = useTranslation();
 
@@ -68,10 +67,10 @@ const Hero: React.FC = props => {
             <StyledTab>{ t(`Earn`) }</StyledTab>
           </StyledTabList>
           <StyledTabPanel>
-            Any content 1
+            Borrow content
           </StyledTabPanel>
           <StyledTabPanel>
-            Any content 2
+            Earn content
           </StyledTabPanel>
         </StyledTabs>
     </CalculatorWrap>
