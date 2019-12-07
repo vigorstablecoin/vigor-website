@@ -27,6 +27,8 @@ const HeroContent = styled.h2`
 
 // @todo: this should come from a global base button style
 const HeroLinkWrap = styled.div`
+  display: flex;
+  
   a {
     padding: 11px 50px;
     border-radius: 4px;
