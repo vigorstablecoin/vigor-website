@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { useTranslation } from 'react-i18next';
+import BorrowCalculator from '../components/BorrowCalculator';
+import ComingSoon from '../components/ComingSoon';
 
 const CalculatorWrap = styled.div`
   padding: 16px;
@@ -44,7 +46,7 @@ const StyledTab = styled(Tab)`
 const StyledTabPanel = styled(TabPanel)`
     background-color: ${ props => props.theme.colors.bgLighter };
     display: none;
-    padding: 16px;
+    padding: 22px;
     border-radius: 0 0 8px 8px;
     height: calc(100% - 66px);
     
@@ -53,7 +55,7 @@ const StyledTabPanel = styled(TabPanel)`
     }
 `;
 
-const Hero: React.FC = props => {
+const BorrowEarnTabs: React.FC = props => {
   const { t } = useTranslation();
 
   return (
@@ -67,14 +69,14 @@ const Hero: React.FC = props => {
             <StyledTab>{ t(`Earn`) }</StyledTab>
           </StyledTabList>
           <StyledTabPanel>
-            Borrow content
+            <BorrowCalculator/>
           </StyledTabPanel>
           <StyledTabPanel>
-            Earn content
+            <ComingSoon/>
           </StyledTabPanel>
         </StyledTabs>
     </CalculatorWrap>
   );
 };
 
-export default Hero;
+export default BorrowEarnTabs;

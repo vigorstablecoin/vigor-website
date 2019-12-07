@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next';
 import Hero from '../components/Hero';
-import BorrowEarnCalculator from '../components/Calculator';
+import BorrowEarnTabs from '../components/BorrowEarnTabs';
 import LocalizedLink from '../components/LocalizedLink';
 import Grid from 'styled-components-grid';
 
@@ -25,7 +25,7 @@ const Index: React.FC<{}> = (props) => {
           />
         </Grid.Unit>
         <Grid.Unit size={{ md: 5 / 12 }}>
-          <BorrowEarnCalculator />
+          <BorrowEarnTabs />
         </Grid.Unit>
       </Grid>
     </React.Fragment>
