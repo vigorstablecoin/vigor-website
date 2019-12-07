@@ -66,8 +66,8 @@ const BorrowEarnTabs: React.FC = props => {
           selectedTabPanelClassName='is-selected'
         >
           <StyledTabList>
-            <StyledTab>{ t(`Borrow`) }</StyledTab>
-            <StyledTab>{ t(`Earn`) }</StyledTab>
+            <StyledTab>{ t(`borrow`) }</StyledTab>
+            <StyledTab>{ t(`earn`) }</StyledTab>
           </StyledTabList>
           <StyledTabPanel>
             <BorrowCalculator/>
