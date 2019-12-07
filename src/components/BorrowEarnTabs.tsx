@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { useTranslation } from 'react-i18next';
 import BorrowCalculator from '../components/BorrowCalculator';
 import ComingSoon from '../components/ComingSoon';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 const CalculatorWrap = styled.div`
   padding: 16px;
@@ -51,7 +51,8 @@ const StyledTabPanel = styled(TabPanel)`
     height: calc(100% - 66px);
     
     &.is-selected {
-      display: block;
+      display: flex;
+      flex-direction: column;
     }
 `;
 

@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import Hero from '../components/Hero';
 import BorrowEarnTabs from '../components/BorrowEarnTabs';
 import LocalizedLink from '../components/LocalizedLink';
+// @ts-ignore
 import Grid from 'styled-components-grid';
 
 const Index: React.FC<{}> = (props) => {
