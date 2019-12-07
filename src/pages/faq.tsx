@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import ComingSoon from "../components/ComingSoon";
 
 const Index: React.FC<{}> = (props) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   return (
     <>
@@ -11,7 +11,7 @@ const Index: React.FC<{}> = (props) => {
       <ComingSoon />
     </>
   )
-}
+};
 
 export default Index
 

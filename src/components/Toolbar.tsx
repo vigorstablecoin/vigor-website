@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
-import LocalizedLink, { LocalizedChangeLanguageLink } from "./LocalizedLink";
+import LocalizedLink from "./LocalizedLink";
 import VigorLogoText from "./VigorLogoText";
 import LanguageDropdown from "./LanguageDropdown";
 import { BlueButton } from "./shared";
@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   width: 100%;
   max-width: 1240px;
   align-items: center;
-  margin: 0 auto 116px auto;
+  margin: 0 auto 71px auto;
   padding: 16px;
 `;
 
@@ -42,10 +42,10 @@ const Toolbar: React.FC<GlobalProps> = props => {
       </StyledLocalizedLink>
       <Spacer />
       <NavBlock>
-        <StyledLocalizedLink to="/products">Products</StyledLocalizedLink>
-        <StyledLocalizedLink to="/learn">Learn</StyledLocalizedLink>
-        <StyledLocalizedLink to="/community">Community</StyledLocalizedLink>
-        <StyledLocalizedLink to="/faq">FAQ</StyledLocalizedLink>
+        <StyledLocalizedLink to="/">{t(`products`)}</StyledLocalizedLink>
+        <StyledLocalizedLink to="/learn">{t(`learn`)}</StyledLocalizedLink>
+        <StyledLocalizedLink to="/community">{t(`community`)}</StyledLocalizedLink>
+        <StyledLocalizedLink to="/faq">{t(`faqShort`)}</StyledLocalizedLink>
         <LanguageDropdown path={props.path} />
         <BlueButton
           as="a"

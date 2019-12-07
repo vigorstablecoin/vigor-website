@@ -4,7 +4,6 @@ import { Link } from "gatsby";
 import LocaleContext from "../localeContext";
 import locales from "../../config/i18n";
 import trim from 'lodash/trim'
-import theme from "../utils/theme";
 
 type Props = {
   to: string;
@@ -46,7 +45,7 @@ export const LocalizedChangeLanguageLink: React.FC<LocalizedChangeLanguageLinkPr
   const desiredLocaleObj = (locales as any)[desiredLocale]!;
 
   let pathWithoutLanguage = ``;
-  currentPath = trim(currentPath, `/`)
+  currentPath = trim(currentPath, `/`);
   if (currentLocaleObj.default) {
     pathWithoutLanguage = currentPath;
   } else {
