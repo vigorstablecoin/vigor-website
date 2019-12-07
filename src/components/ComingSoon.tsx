@@ -1,10 +1,10 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-const Welcome: React.FC<{}> = () => {
+const ComingSoon: React.FC<{}> = () => {
   const { t } = useTranslation();
 
-  return <div>{t("Using i18next")}</div>;
+  return <div>{t(`comingSoon`)}</div>;
 };
 
-export default Welcome;
+export default ComingSoon;

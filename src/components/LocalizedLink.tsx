@@ -11,9 +11,7 @@ type Props = {
 };
 
 const StyledLink = styled(Link)`
-  text-decoration: none;
   color: ${props => props.theme.colors.white};
-  cursor: pointer;
 `
 
 // Use the globally available context to choose the right path
@@ -59,7 +57,7 @@ export const LocalizedChangeLanguageLink: React.FC<LocalizedChangeLanguageLinkPr
   const path = desiredLocaleObj.default
     ? `/${pathWithoutLanguage}`
     : `/${desiredLocale}/${pathWithoutLanguage}`;
-  console.log({ path, currentPath, pathWithoutLanguage, desiredLocale })
+
   return <StyledLink {...props} to={path} />;
 };
 

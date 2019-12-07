@@ -1,7 +1,6 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from "react";
 import { useTranslation } from "react-i18next";
-import Welcome from "../components/Welcome";
+import Welcome from "../components/ComingSoon";
 
 const Index: React.FC<{}> = (props) => {
   // useTranslations is aware of the global context (and therefore also "locale")

@@ -1,17 +1,16 @@
-import React, { useEffect } from 'react'
-import RedirectMessage from '../components/Redirect';
+import React from "react";
+import ComingSoon from "../components/ComingSoon";
+import { useTranslation } from "react-i18next";
 
-const url = `https://vigor.ai`
-const Learn: React.FC<{}> = (props) => {
-  useEffect(() => {
-    if (typeof window !== `undefined`) {
-      window.location.assign(url);
-    }
-  }, [])
+const Learn: React.FC<{}> = props => {
+  const { t } = useTranslation();
 
   return (
-      <RedirectMessage />
+    <React.Fragment>
+      <h1>{t(`learn`)}</h1>
+      <ComingSoon />
+    </React.Fragment>
   );
-}
+};
 
 export default Learn;

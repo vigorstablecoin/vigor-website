@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import LocalizedLink, { LocalizedChangeLanguageLink } from "./LocalizedLink";
 import VigorLogoText from "./VigorLogoText";
 import LanguageDropdown from "./LanguageDropdown";
+import { BlueButton } from "./shared";
 
 const StyledLocalizedLink = styled(LocalizedLink)`
   font-size: 15px;
@@ -29,21 +30,32 @@ const NavBlock = styled.nav`
   justify-content: flex-end;
   align-items: center;
   flex: 0 0 auto;
-`
+`;
 
 const Toolbar: React.FC<GlobalProps> = props => {
   const { t } = useTranslation();
 
   return (
     <Wrapper>
-      <VigorLogoText height={55} />
+      <StyledLocalizedLink to="/">
+        <VigorLogoText height={55} />
+      </StyledLocalizedLink>
       <Spacer />
       <NavBlock>
-        <StyledLocalizedLink to="/">Products</StyledLocalizedLink>
+        <StyledLocalizedLink to="/products">Products</StyledLocalizedLink>
         <StyledLocalizedLink to="/learn">Learn</StyledLocalizedLink>
         <StyledLocalizedLink to="/community">Community</StyledLocalizedLink>
         <StyledLocalizedLink to="/faq">FAQ</StyledLocalizedLink>
         <LanguageDropdown path={props.path} />
+        <BlueButton
+          as="a"
+          margin="0 0 0 32px"
+          href="https://newdex.io/trade/vig111111111-vig-eos"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+        >
+          {t(`buyVig`)}
+        </BlueButton>
       </NavBlock>
     </Wrapper>
   );
