@@ -105,7 +105,7 @@ function calculate(loanAmount: number, loanCurrency: string, collateralAmount: n
   const ltv = loanValue / collateralValue * 100;
   const interestRate = 4;
   const serviceFee = 0;
-  const creditScore = (1000 / ltv);
+  const creditScore = ltv * 5;
   const repaymentAmount = loanValue + (loanValue * (interestRate / 100));
 
   setResult({
@@ -208,24 +208,24 @@ const BorrowCalculator: React.FC = props => {
       </AmountWrap>
       <ResultWrap>
         <FlexRowSpaceBetween>
-          <ResultLabel>LTV (Loan-to-Value Ratio)</ResultLabel>
+          <ResultLabel>{ t(`loanToValue`) }</ResultLabel>
           <ResultValue>{ Math.round(results.ltv * 100) / 100 }%</ResultValue>
         </FlexRowSpaceBetween>
         <FlexRowSpaceBetween>
-          <ResultLabel>Interest Rate</ResultLabel>
+          <ResultLabel>{ t(`interestRate`) }</ResultLabel>
           <ResultValue>{ Math.round(results.interestRate * 100) / 100 }%</ResultValue>
         </FlexRowSpaceBetween>
         <FlexRowSpaceBetween>
-          <ResultLabel>Service Fee</ResultLabel>
-          <ResultValue>{ results.serviceFee === 0 ? 'No Fees' : results.serviceFee }</ResultValue>
+          <ResultLabel>{ t(`serviceFee`) }</ResultLabel>
+          <ResultValue>{ results.serviceFee === 0 ? 'No Fees' : Math.round(results.serviceFee * 100) / 100 }</ResultValue>
         </FlexRowSpaceBetween>
         <FlexRowSpaceBetween>
-          <ResultLabel>Credit Score</ResultLabel>
+          <ResultLabel>{ t(`creditScore`) }</ResultLabel>
           <ResultValue>{ Math.round(results.creditScore) }</ResultValue>
         </FlexRowSpaceBetween>
         <Divider/>
         <FlexRowSpaceBetween>
-          <ResultLabel>Est. Repayment Amount</ResultLabel>
+          <ResultLabel>{ t(`estRepaymentAmount`) }</ResultLabel>
           <RepaymentAmount>${ Math.round(results.repaymentAmount * 100) / 100 }</RepaymentAmount>
         </FlexRowSpaceBetween>
       </ResultWrap>

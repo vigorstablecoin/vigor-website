@@ -11,10 +11,15 @@
       "products": "Products",
       "comingSoon": "Coming Soon",
       "buyVig": "Buy VIG",
+      "borrow": "Borrow",
+      "earn": "Earn",
       "loanAmount": "Loan Amount",
       "collateralAmount": "Collateral Amount",
-      "borrow": "Borrow",
-      "earn": "Earn"
+      "loanToValue": "LTV (Loan-to-Value Ratio)",
+      "interestRate": "Interest Rate",
+      "serviceFee": "Service Fee",
+      "creditScore": "Credit Score",
+      "estRepaymentAmount": "Est. Repayment Amount"
     }
   },
   "de": {
@@ -29,10 +34,15 @@
       "products": "Produkte",
       "comingSoon": "Demnächst",
       "buyVig": "Kaufe VIG",
+      "borrow": "Leihen",
+      "earn": "Verdienen",
       "loanAmount": "Darlehen",
       "collateralAmount": "Sicherheit",
-      "borrow": "Leihen",
-      "earn": "Verdienen"
+      "loanToValue": "LTV (Loan-to-Value Ratio)",
+      "interestRate": "Zinssatz",
+      "serviceFee": "Gebühren",
+      "creditScore": "Kredit Score",
+      "estRepaymentAmount": "Erwartete Rückzahlung"
     }
   }
 }
