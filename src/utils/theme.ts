@@ -6,6 +6,8 @@ const bgLighter = '#2F3347';
 const bgLightest = '#50587A';
 
 const primary = '#4468CC';
+const primaryLighter = '#5981F0';
+
 const secondary = '#6DE4F0';
 const tertiary = '#009AFF';
 const light = '#949EA8';
@@ -21,6 +23,7 @@ const colors = {
   bgLightest,
   white,
   primary,
+  primaryLighter,
   secondary,
   tertiary,
   light,

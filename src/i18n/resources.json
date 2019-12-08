@@ -12,7 +12,9 @@
       "comingSoon": "Coming Soon",
       "buyVig": "Buy VIG",
       "loanAmount": "Loan Amount",
-      "collateralAmount": "Collateral Amount"
+      "collateralAmount": "Collateral Amount",
+      "borrow": "Borrow",
+      "earn": "Earn"
     }
   },
   "de": {
@@ -28,7 +30,9 @@
       "comingSoon": "Demnächst",
       "buyVig": "Kaufe VIG",
       "loanAmount": "Darlehen",
-      "collateralAmount": "Sicherheit"
+      "collateralAmount": "Sicherheit",
+      "borrow": "Leihen",
+      "earn": "Verdienen"
     }
   }
 }

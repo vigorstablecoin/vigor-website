@@ -16,6 +16,9 @@ const AmountWrap = styled.div`
 
 const AmountInputWrap = styled.div`
   width: 50%;
+  &:last-child {
+    margin-left: 16px;
+  }
 `;
 
 const AmountInputLabel = styled.label`
@@ -35,6 +38,11 @@ const FlexRow = styled.div`
   width: 100%;
 `;
 
+const FlexRowSpaceBetween = styled(FlexRow)`
+  justify-content: space-between;
+  margin-bottom: 8px;
+`;
+
 const InputStyle = css`
   background-color: ${ props => props.theme.colors.bg };
   color: ${ props => props.theme.colors.light };
@@ -47,12 +55,43 @@ const InputStyle = css`
 const StyledInput = styled.input`
   ${ InputStyle }
   padding: 15px;
-  width: 100px;
+  width: 100%;
 `;
 
 const StyledSelect = styled.select`
   ${ InputStyle }
   margin-left: 8px;
+`;
+
+const ResultWrap = styled.div`
+  padding: 22px;
+`;
+
+const ResultLabel = styled.div`
+  font-weight: 600;
+  font-size: 14px;
+  height: 34px;
+  line-height: 34px;
+`;
+
+const ResultValue = styled(ResultLabel)`
+  color: ${ props => props.theme.colors.secondary };
+  background-color: ${ props => props.theme.colors.bg };
+  border-radius: 8px;
+  width: 86px;
+  text-align: center;
+`;
+
+const Divider = styled.div`
+  background-color: ${ props => props.theme.colors.bg };
+  height: 1px;
+  width: 100%;
+  margin: 16px 0;
+`;
+
+const RepaymentAmount = styled(ResultLabel)`
+  font-size: 20px;
+  color: ${ props => props.theme.colors.primaryLighter };
 `;
 
 const BorrowCalculator: React.FC = props => {
@@ -94,6 +133,29 @@ const BorrowCalculator: React.FC = props => {
           </FlexRow>
         </AmountInputWrap>
       </AmountWrap>
+      <ResultWrap>
+        <FlexRowSpaceBetween>
+          <ResultLabel>LTV (Loan-to-Value Ratio)</ResultLabel>
+          <ResultValue>90%</ResultValue>
+        </FlexRowSpaceBetween>
+        <FlexRowSpaceBetween>
+          <ResultLabel>Interest Rate</ResultLabel>
+          <ResultValue>3.4%</ResultValue>
+        </FlexRowSpaceBetween>
+        <FlexRowSpaceBetween>
+          <ResultLabel>Service Fee</ResultLabel>
+          <ResultValue>No Fees</ResultValue>
+        </FlexRowSpaceBetween>
+        <FlexRowSpaceBetween>
+          <ResultLabel>Credit Score</ResultLabel>
+          <ResultValue>760</ResultValue>
+        </FlexRowSpaceBetween>
+        <Divider/>
+        <FlexRowSpaceBetween>
+          <ResultLabel>Est. Repayment Amount</ResultLabel>
+          <RepaymentAmount>$1,034</RepaymentAmount>
+        </FlexRowSpaceBetween>
+      </ResultWrap>
       <ButtonWrap>
         <BlueButton as="button" margin="0" fullWidth={true}>{ t(`comingSoon`) }</BlueButton>
       </ButtonWrap>
