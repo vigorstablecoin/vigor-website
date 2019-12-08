@@ -54,6 +54,7 @@ const InputStyle = css`
 
 const StyledInput = styled.input`
   ${ InputStyle }
+  text-align: right;
   padding: 15px;
   width: 100%;
 `;

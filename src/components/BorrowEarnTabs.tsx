@@ -23,7 +23,6 @@ const StyledTabList = styled(TabList)`
 `;
 
 const StyledTab = styled(Tab)`
-  cursor: pointer;
   width: 100%;
   text-align: center;
   font-size: 18px;
@@ -39,6 +38,7 @@ const StyledTab = styled(Tab)`
   }
   
   &:not(.is-selected) {
+    cursor: pointer;
     background-color: ${ props => props.theme.colors.primary };
   }
 `;

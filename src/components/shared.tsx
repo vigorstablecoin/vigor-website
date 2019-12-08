@@ -12,6 +12,10 @@ const BlueButtonStyles = css`
   width: ${props => (props as any).fullWidth ? '100%' : 'initial'};
   border-radius: 4px;
   background-color: ${({ theme }) => theme.colors.primary};
+  
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.primaryLighter};
+  }
 `;
 
 const BlueButtonButton = styled.button`
