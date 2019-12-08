@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import { BlueButton } from './shared';
@@ -55,7 +55,7 @@ const InputStyle = css`
 const StyledInput = styled.input`
   ${ InputStyle }
   text-align: right;
-  padding: 15px;
+  padding: 15px 0;
   width: 100%;
 `;
 
@@ -95,14 +95,82 @@ const RepaymentAmount = styled(ResultLabel)`
   color: ${ props => props.theme.colors.primaryLighter };
 `;
 
+function calculate(loanAmount: number, loanCurrency: string, collateralAmount: number, collateralCurrency: string, dummyData: any, setResult: any) {
+  const loanCurrencyRate = dummyData.exchangeRates.USD[loanCurrency];
+  const collateralCurrencyRate = dummyData.exchangeRates.USD[collateralCurrency];
+
+  const loanValue = loanCurrencyRate * loanAmount;
+  const collateralValue = collateralCurrencyRate * collateralAmount;
+
+  const ltv = loanValue / collateralValue * 100;
+  const interestRate = 4;
+  const serviceFee = 0;
+  const creditScore = (1000 / ltv);
+  const repaymentAmount = loanValue + (loanValue * (interestRate / 100));
+
+  setResult({
+    ltv,
+    interestRate,
+    serviceFee,
+    creditScore,
+    repaymentAmount,
+  });
+}
+
+interface Results {
+  ltv: number;
+  interestRate: number;
+  serviceFee: number;
+  creditScore: number;
+  repaymentAmount: number;
+}
+
 const BorrowCalculator: React.FC = props => {
   const { t } = useTranslation();
 
-  const [ loanAmount, setLoanAmount ] = useState(1000);
-  const [ collateralAmount, setCollateralAmount ] = useState(900);
+  // @todo: replace dummy data with actual data source
+  const [ dummyData, /* setDummyData */ ] = useState({
+    exchangeRates: {
+      USD: {
+        VIGOR: 0.00092,
+        EOS: 2.72,
+        BTC: 7500,
+      },
+      BTC: {
+        VIGOR: 0.00092,
+        EOS: 2.72,
+        BTC: 1,
+      },
+      EOS: {
+        VIGOR: 0.00092,
+        EOS: 1,
+        BTC: 7500,
+      },
+      VIGOR: {
+        VIGOR: 1,
+        EOS: 2.72,
+        BTC: 7500,
+      }
+    }
+  });
 
-  const [ loanCurrency, setLoanCurrency ] = useState('VIGOR');
-  const [ collateralCurrency, setCollateralCurrency ] = useState('EOS');
+  const [ loanAmount, setLoanAmount ] = useState<number>(1000);
+  const [ collateralAmount, setCollateralAmount ] = useState<number>(0.5);
+
+  const [ loanCurrency, setLoanCurrency ] = useState<string>('VIGOR');
+  const [ collateralCurrency, setCollateralCurrency ] = useState<string>('EOS');
+
+  const [ results, setResults ] = useState<Results>({
+    ltv: 0,
+    interestRate: 0,
+    serviceFee: 0,
+    creditScore: 0,
+    repaymentAmount: 0,
+  });
+
+  useEffect(() => {
+    calculate(loanAmount, loanCurrency, collateralAmount, collateralCurrency, dummyData, setResults);
+  }, [loanAmount, loanCurrency, collateralAmount, collateralCurrency]);
 
   return (
     <BorrowCalculatorWrap>
@@ -110,11 +178,13 @@ const BorrowCalculator: React.FC = props => {
         <AmountInputWrap>
           <AmountInputLabel htmlFor="loanAmount">{ t(`loanAmount`) }</AmountInputLabel>
           <FlexRow>
-            <StyledInput type="text" id="loanAmount" name="loanAmount"
+            <StyledInput type="number" id="loanAmount" name="loanAmount"
                          value={loanAmount}
                          onChange={(e) => setLoanAmount(Number(e.target.value))}
             />
-            <StyledSelect value={loanCurrency} onChange={(e) => setLoanCurrency(e.target.value)}>
+            <StyledSelect value={loanCurrency}
+                          onChange={(e) => setLoanCurrency(e.target.value)}
+            >
               <option value="VIGOR">VIGOR</option>
               <option value="BTC">BTC</option>
             </StyledSelect>
@@ -123,11 +193,13 @@ const BorrowCalculator: React.FC = props => {
         <AmountInputWrap>
           <AmountInputLabel>{ t(`collateralAmount`) }</AmountInputLabel>
           <FlexRow>
-            <StyledInput type="text" id="collateralAmount" name="collateralAmount"
+            <StyledInput type="number" id="collateralAmount" name="collateralAmount"
                          value={collateralAmount}
                          onChange={(e) => setCollateralAmount(Number(e.target.value))}
             />
-            <StyledSelect value={collateralCurrency} onChange={(e) => setCollateralCurrency(e.target.value)}>
+            <StyledSelect value={collateralCurrency}
+                          onChange={(e) => setCollateralCurrency(e.target.value)}
+            >
               <option value="EOS">EOS</option>
               <option value="BTC">BTC</option>
             </StyledSelect>
@@ -137,24 +209,24 @@ const BorrowCalculator: React.FC = props => {
       <ResultWrap>
         <FlexRowSpaceBetween>
           <ResultLabel>LTV (Loan-to-Value Ratio)</ResultLabel>
-          <ResultValue>90%</ResultValue>
+          <ResultValue>{ Math.round(results.ltv * 100) / 100 }%</ResultValue>
         </FlexRowSpaceBetween>
         <FlexRowSpaceBetween>
           <ResultLabel>Interest Rate</ResultLabel>
-          <ResultValue>3.4%</ResultValue>
+          <ResultValue>{ Math.round(results.interestRate * 100) / 100 }%</ResultValue>
         </FlexRowSpaceBetween>
         <FlexRowSpaceBetween>
           <ResultLabel>Service Fee</ResultLabel>
-          <ResultValue>No Fees</ResultValue>
+          <ResultValue>{ results.serviceFee === 0 ? 'No Fees' : results.serviceFee }</ResultValue>
         </FlexRowSpaceBetween>
         <FlexRowSpaceBetween>
           <ResultLabel>Credit Score</ResultLabel>
-          <ResultValue>760</ResultValue>
+          <ResultValue>{ Math.round(results.creditScore) }</ResultValue>
         </FlexRowSpaceBetween>
         <Divider/>
         <FlexRowSpaceBetween>
           <ResultLabel>Est. Repayment Amount</ResultLabel>
-          <RepaymentAmount>$1,034</RepaymentAmount>
+          <RepaymentAmount>${ Math.round(results.repaymentAmount * 100) / 100 }</RepaymentAmount>
         </FlexRowSpaceBetween>
       </ResultWrap>
       <ButtonWrap>
