@@ -19,7 +19,8 @@
       "interestRate": "Interest Rate",
       "serviceFee": "Service Fee",
       "creditScore": "Credit Score",
-      "estRepaymentAmount": "Est. Repayment Amount"
+      "estRepaymentAmount": "Est. Repayment Amount",
+      "getInvolved": "Get Involved"
     }
   },
   "de": {
@@ -42,7 +43,8 @@
       "interestRate": "Zinssatz",
       "serviceFee": "Gebühren",
       "creditScore": "Kredit Score",
-      "estRepaymentAmount": "Erwartete Rückzahlung"
+      "estRepaymentAmount": "Erwartete Rückzahlung",
+      "getInvolved": "Engagier Dich"
     }
   }
 }

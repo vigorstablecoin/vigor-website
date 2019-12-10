@@ -22,7 +22,7 @@ const Index: React.FC<{}> = (props) => {
                 { t(`100% Decentralized, Peer to Peer Lending.`) }
               </>
             }
-            link={ <LocalizedLink to={ '/community' }>{ t(`Get Involved`) }</LocalizedLink> }
+            link={ <LocalizedLink to={ '/community' }>{ t(`getInvolved`) }</LocalizedLink> }
           />
         </Grid.Unit>
         <Grid.Unit size={{ md: 1 / 2 }}>
