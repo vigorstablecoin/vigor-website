@@ -10,7 +10,7 @@ const HeroTitle = styled.h1`
   color: ${props => props.theme.colors.primary};
   font-size: 56px;
   font-weight: 700;
-  margin: 16px 0;
+  margin: 0 0 16px 0;
 `;
 
 const HeroTitleSeparator = styled.div`
