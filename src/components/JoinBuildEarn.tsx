@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const JumbotronWrapper = styled.div`
-  margin-top:168px;
+  margin-top:152px;
   padding: 16px 16%;
   text-align: center;
 `;
@@ -55,7 +55,7 @@ type Props = {
 };
 
 const Hero: React.FC<Props> = props => {
-  const { title, subtitle, content, link } = props;
+  const { title, content, link } = props;
 
   return (
     <JumbotronWrapper>

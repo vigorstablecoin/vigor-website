@@ -17,7 +17,7 @@ const PageHeader = styled.header`
 
 const MainSection = styled.main`
   width: 100%;
-  max-width: 1024px;
+  max-width: 1240px;
 `;
 
 const Layout: React.FC<GlobalProps> = props => {
