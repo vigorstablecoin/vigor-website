@@ -51,7 +51,6 @@ const JumbotronLinkWrap = styled.div`
 
 type Props = {
   title:    string,
-  subtitle: string,
   content:  React.ReactNode,
   link:     React.ReactNode,
 };
