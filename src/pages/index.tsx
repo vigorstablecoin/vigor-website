@@ -33,8 +33,8 @@ const Index: React.FC<{}> = (props) => {
 
       <Grid>
         <BorrowLendInsure
-          subtitle={ t(`Borrow, lend, insure, and vote through open source smart contracts.`) }
-          link={ <LocalizedLink to={ '/whitepaper' }>{ t(`Read The Whitepaper`) } <strong>&#8594;</strong></LocalizedLink> }
+          subtitle={ t(`borrowLendInsure-subtitle`) }
+          link={ <LocalizedLink to={ '/whitepaper' }>{ t(`readTheWhitepaper`) } <strong>&#8594;</strong></LocalizedLink> }
         />
       </Grid>
     </React.Fragment>
