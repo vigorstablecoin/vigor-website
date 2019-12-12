@@ -3,8 +3,7 @@ import styled from 'styled-components';
 
 const JumbotronWrapper = styled.div`
   margin-top:152px;
-  padding: 16px 16%;
-  text-align: center;
+  padding: 16px;
 `;
 
 const JumbotronTitle = styled.h1`
@@ -13,6 +12,7 @@ const JumbotronTitle = styled.h1`
   font-size: 56px;
   font-weight: 700;
   margin: 16px 0;
+  text-align: center;
 `;
 
 const JumbotronTitleSeparator = styled.div`
@@ -26,7 +26,9 @@ const JumbotronContent = styled.p`
   font-size: 18px;
   line-height: 24px;
   font-weight: 500;
-  margin: 16px 0 51px 0;
+  margin: 16px auto 51px;
+  max-width: 58%;
+  text-align: center;
   color: ${props => props.theme.colors.primary};
 `;
 
@@ -35,6 +37,7 @@ const JumbotronLinkWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   
   a {
     padding: 11px 50px;
