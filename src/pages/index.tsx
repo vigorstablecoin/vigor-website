@@ -36,9 +36,9 @@ const Index: React.FC<{}> = (props) => {
 
       <Grid>
         <JoinBuildEarn
-          title="Join. Build. Earn."
-          content="The Vigor Stablecoin project is governed by a DAC, (Decentralized Autonomous Community) whose goal is to build and deploy the Vigor Project based on the specifications of the Vigor Whitepaper."
-          link={ <LocalizedLink to={ '/community' }>{ t(`Get Involved`) }</LocalizedLink> } 
+          title={ t(`joinBuildEarn-title`) }
+          content={ t(`joinBuildEarn-content`) }
+          link={ <LocalizedLink to={ '/community' }>{ t(`getInvolved`) }</LocalizedLink> } 
         />
       </Grid>
     </React.Fragment>
