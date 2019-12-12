@@ -1,10 +1,14 @@
+
+
 import React from 'react'
 import { useTranslation } from 'react-i18next';
 import Hero from '../components/Hero';
 import BorrowEarnTabs from '../components/BorrowEarnTabs';
+import JoinBuildEarn from "../components/JoinBuildEarn";
 import LocalizedLink from '../components/LocalizedLink';
 // @ts-ignore
 import Grid from 'styled-components-grid';
+
 
 const Index: React.FC<{}> = (props) => {
   const { t } = useTranslation();
@@ -28,6 +32,14 @@ const Index: React.FC<{}> = (props) => {
         <Grid.Unit size={{ md: 1 / 2 }}>
           <BorrowEarnTabs />
         </Grid.Unit>
+      </Grid>
+
+      <Grid>
+        <JoinBuildEarn
+          title={ t(`joinBuildEarn-title`) }
+          content={ t(`joinBuildEarn-content`) }
+          link={ <LocalizedLink to={ '/community' }>{ t(`getInvolved`) }</LocalizedLink> } 
+        />
       </Grid>
     </React.Fragment>
   )

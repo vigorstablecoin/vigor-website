@@ -34,7 +34,7 @@ const Layout: React.FC<GlobalProps> = props => {
         <PageHeader>
           <Toolbar {...props} />
         </PageHeader>
-        <MainSection>{props.children}</MainSection>
+        <MainSection>{props.children}</MainSection>        
       </Page>
     </ThemeProvider>
   );

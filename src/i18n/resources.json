@@ -20,7 +20,9 @@
       "serviceFee": "Service Fee",
       "creditScore": "Credit Score",
       "estRepaymentAmount": "Est. Repayment Amount",
-      "getInvolved": "Get Involved"
+      "getInvolved": "Get Involved",
+      "joinBuildEarn-title": "Join. Build. Earn.",
+      "joinBuildEarn-content": "The Vigor Stablecoin project is governed by a DAC, (Decentralized Autonomous Community) whose goal is to build and deploy the Vigor Project based on the specifications of the Vigor Whitepaper."
     }
   },
   "de": {
@@ -44,7 +46,10 @@
       "serviceFee": "Gebühren",
       "creditScore": "Kredit Score",
       "estRepaymentAmount": "Erwartete Rückzahlung",
-      "getInvolved": "Engagier Dich"
+      "getInvolved": "Engagier Dich",
+      "joinBuildEarn-title": "Join. Build. Earn.",
+      "joinBuildEarn-content": "The Vigor Stablecoin project is governed by a DAC, (Decentralized Autonomous Community) whose goal is to build and deploy the Vigor Project based on the specifications of the Vigor Whitepaper."
+
     }
   }
 }
