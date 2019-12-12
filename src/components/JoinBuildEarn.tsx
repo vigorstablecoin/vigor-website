@@ -26,7 +26,7 @@ const JumbotronTitleSeparator = styled.div`
 const JumbotronContent = styled.p`
   font-size: 18px;
   line-height: 24px;
-  font-weight: 400;
+  font-weight: 500;
   margin: 16px 0 51px 0;
   color: ${props => props.theme.colors.primary};
 `;
