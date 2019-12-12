@@ -18,8 +18,7 @@ const JumbotronTitle = styled.h1`
 const JumbotronTitleSeparator = styled.div`
   width: 81px;
   height: 2px;
-  left: 48%;
-  position: relative;
+  margin: 0 auto;
   background-color: ${props => props.theme.colors.secondary};
 `;
 
