@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import Hero from '../components/Hero';
 import BorrowEarnTabs from '../components/BorrowEarnTabs';
 import LocalizedLink from '../components/LocalizedLink';
+import BorrowLendInsure  from '../components/BorrowLendInsure';
 // @ts-ignore
 import Grid from 'styled-components-grid';
 
@@ -28,6 +29,13 @@ const Index: React.FC<{}> = (props) => {
         <Grid.Unit size={{ md: 1 / 2 }}>
           <BorrowEarnTabs />
         </Grid.Unit>
+      </Grid>
+
+      <Grid>
+        <BorrowLendInsure
+          subtitle={ t(`Borrow, lend, insure, and vote through open source smart contracts.`) }
+          link={ <LocalizedLink to={ '/whitepaper' }>{ t(`Read The Whitepaper`) } <strong>&#8594;</strong></LocalizedLink> }
+        />
       </Grid>
     </React.Fragment>
   )
