@@ -7,9 +7,7 @@ import BorrowEarnTabs from '../components/BorrowEarnTabs';
 import JoinBuildEarn from "../components/JoinBuildEarn";
 import LocalizedLink from '../components/LocalizedLink';
 import BorrowLendInsure  from '../components/BorrowLendInsure';
-// @ts-ignore
 import Grid from 'styled-components-grid';
-
 
 const Index: React.FC<{}> = (props) => {
   const { t } = useTranslation();

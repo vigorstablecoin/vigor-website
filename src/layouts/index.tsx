@@ -5,6 +5,7 @@ import Toolbar from "../components/Toolbar";
 import GlobalStyles from "../components/GlobalStyles";
 import withI18next from "../i18n/withI18next";
 import theme from "../utils/theme";
+import Footer from "../components/Footer";
 
 const Page = styled.div`
   display: flex;
@@ -34,7 +35,8 @@ const Layout: React.FC<GlobalProps> = props => {
         <PageHeader>
           <Toolbar {...props} />
         </PageHeader>
-        <MainSection>{props.children}</MainSection>        
+        <MainSection>{props.children}</MainSection>
+        <Footer />
       </Page>
     </ThemeProvider>
   );
