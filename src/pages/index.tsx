@@ -6,6 +6,7 @@ import Hero from '../components/Hero';
 import BorrowEarnTabs from '../components/BorrowEarnTabs';
 import JoinBuildEarn from "../components/JoinBuildEarn";
 import LocalizedLink from '../components/LocalizedLink';
+import BorrowLendInsure  from '../components/BorrowLendInsure';
 // @ts-ignore
 import Grid from 'styled-components-grid';
 
@@ -39,6 +40,13 @@ const Index: React.FC<{}> = (props) => {
           title={ t(`joinBuildEarn-title`) }
           content={ t(`joinBuildEarn-content`) }
           link={ <LocalizedLink to={ '/community' }>{ t(`getInvolved`) }</LocalizedLink> } 
+        />
+      </Grid>
+
+      <Grid>
+        <BorrowLendInsure
+          subtitle={ t(`borrowLendInsure-subtitle`) }
+          link={ <a href = { '../vigor.pdf' } target = "_blank">{ t(`readTheWhitepaper`) } <strong>&#8594;</strong></a> }
         />
       </Grid>
     </React.Fragment>
