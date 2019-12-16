@@ -37,3 +37,97 @@ export const BlueButton: React.FC<BlueButtonProps &
 
   return <BlueButtonButton {...(otherProps as any)} />;
 };
+
+type StyledInputProps = {
+  as: 'textarea' | 'text' | 'number' | 'select',
+};
+
+const InputStyle = css`
+  background-color: ${ props => props.theme.colors.bg };
+  color: ${ props => props.theme.colors.light };
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 18px;
+`;
+
+const StyledInputNumber = styled.input`
+  ${ InputStyle }
+  text-align: right;
+  padding: 15px 0;
+  width: 100%;
+`;
+
+const StyledInputText = styled.input`
+  ${ InputStyle }
+  padding: 15px;
+  width: 100%;
+`;
+
+const StyledInputTextArea = styled.select`
+  ${ InputStyle }
+  padding: 15px;
+  width: 100%;
+`;
+
+const StyledInputSelect = styled.select`
+  ${ InputStyle }
+  margin-left: 16px;
+`;
+
+export const StyledInput: React.FC<StyledInputProps &
+  React.HTMLProps<HTMLInputElement> &
+  React.HTMLProps<HTMLSelectElement> &
+  React.HTMLProps<HTMLTextAreaElement>> = ({ as, ...otherProps}) => {
+
+  if (as === 'select') {
+    return <StyledInputSelect type={as} {...(otherProps as any) }/>;
+  }
+
+  if (as === 'textarea') {
+    return <StyledInputTextArea type={as} {...(otherProps as any) }/>;
+  }
+
+  if (as === 'number') {
+    return <StyledInputNumber type={as} {...(otherProps as any) }/>;
+  }
+
+  return <StyledInputText type="text" {...(otherProps as any) }/>
+};
+
+/**
+ * Flex
+ */
+type FlexRowProps = {
+  as?: 'spaceBetween' | 'spaceAround',
+};
+
+const FlexRowStyle = styled.div`
+  display: flex;
+  width: 100%;
+  
+  &:not(:last-of-type) {
+    margin-bottom: 8px;
+  }
+`;
+
+const FlexRowSpaceBetweenStyle = styled(FlexRowStyle)`
+  justify-content: space-between;
+`;
+
+const FlexRowSpaceAroundStyle = styled(FlexRowStyle)`
+  justify-content: space-around;
+`;
+
+export const FlexRow: React.FC<FlexRowProps & React.HTMLProps<HTMLDivElement>> = ({ as, ...otherProps }) => {
+  if (as === 'spaceBetween') {
+    return <FlexRowSpaceBetweenStyle {...(otherProps as any)} />;
+  }
+
+  if (as === 'spaceAround') {
+    return <FlexRowSpaceAroundStyle {...(otherProps as any)} />;
+  }
+
+  return <FlexRowStyle {...(otherProps as any)} />;
+};
+

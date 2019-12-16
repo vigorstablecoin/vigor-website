@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import styled, { css } from 'styled-components';
+import React, { useState } from 'react';
+import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
-import { BlueButton } from './shared';
+import { BlueButton, StyledInput, FlexRow } from './shared';
 
 const BorrowCalculatorWrap = styled.div`
   height: 100%;
@@ -19,40 +19,6 @@ const AmountInputLabel = styled.label`
 
 const ButtonWrap = styled.div`
   margin-top: auto;
-`;
-
-const FlexRow = styled.div`
-  display: flex;
-  width: 100%;
-`;
-
-const FlexRowSpaceBetween = styled(FlexRow)`
-  justify-content: space-between;
-  
-  &:not(:last-of-type) {
-    margin-bottom: 8px;
-  }
-`;
-
-const InputStyle = css`
-  background-color: ${ props => props.theme.colors.bg };
-  color: ${ props => props.theme.colors.light };
-  border: none;
-  border-radius: 4px;
-  font-size: 14px;
-  line-height: 18px;
-`;
-
-const StyledInput = styled.input`
-  ${ InputStyle }
-  text-align: right;
-  padding: 15px 0;
-  width: 100%;
-`;
-
-const StyledSelect = styled.select`
-  ${ InputStyle }
-  margin-left: 8px;
 `;
 
 const ResultWrap = styled.div`
@@ -138,31 +104,31 @@ const EarnCalculator: React.FC = props => {
   return (
     <BorrowCalculatorWrap>
         <AmountInputLabel>{ t(`insuranceCollateralAmount`) }</AmountInputLabel>
-        <FlexRowSpaceBetween>
-          <StyledInput type="number" id="insuranceCollateralAmount" name="insuranceCollateralAmount" autoComplete="off"
+        <FlexRow as="spaceBetween">
+          <StyledInput as="number" id="insuranceCollateralAmount" name="insuranceCollateralAmount" autoComplete="off"
                        value={collateralAmount}
                        onChange={(e) => setCollateralAmount(Number(e.target.value))}
           />
-          <StyledSelect value={collateralCurrency}
+          <StyledInput as="select" value={collateralCurrency}
                         onChange={(e) => setCollateralCurrency(e.target.value)}
           >
             <option value="EOS">EOS</option>
-          </StyledSelect>
-        </FlexRowSpaceBetween>
+          </StyledInput>
+        </FlexRow>
       <ResultWrap>
-        <FlexRowSpaceBetween>
+        <FlexRow as="spaceBetween">
           <ResultLabel>{ t(`investmentAmount`) }</ResultLabel>
           <ResultValue>${ Math.round(investmentAmount * 100) / 100 }</ResultValue>
-        </FlexRowSpaceBetween>
-        <FlexRowSpaceBetween>
+        </FlexRow>
+        <FlexRow as="spaceBetween">
           <ResultLabel>{ t(`interestRate`) }</ResultLabel>
           <ResultValue>{ Math.round(interestRate * 100) / 100 }%</ResultValue>
-        </FlexRowSpaceBetween>
+        </FlexRow>
         <Divider/>
-        <FlexRowSpaceBetween>
+        <FlexRow as="spaceBetween">
           <ResultLabel>{ t(`estRepaymentAmount`) }</ResultLabel>
           <RepaymentAmount>${ Math.round(repaymentAmount * 100) / 100 }</RepaymentAmount>
-        </FlexRowSpaceBetween>
+        </FlexRow>
       </ResultWrap>
       <ButtonWrap>
         <BlueButton as="button" margin="0" fullWidth={true}>{ t(`comingSoon`) }</BlueButton>
