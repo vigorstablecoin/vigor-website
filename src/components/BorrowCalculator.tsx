@@ -118,8 +118,8 @@ const BorrowCalculator: React.FC = props => {
     }
   });
 
-  const [ loanAmount, setLoanAmount ] = useState<number>(1000);
-  const [ collateralAmount, setCollateralAmount ] = useState<number>(0.5);
+  const [ loanAmount, setLoanAmount ] = useState<number>(150000);
+  const [ collateralAmount, setCollateralAmount ] = useState<number>(125);
 
   const [ loanCurrency, setLoanCurrency ] = useState<string>('VIGOR');
   const [ collateralCurrency, setCollateralCurrency ] = useState<string>('EOS');
