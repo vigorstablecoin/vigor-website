@@ -1,8 +1,9 @@
 {
   "en": {
     "translation": {
-      "hello": "Hello and welcome to this i18n example site!",
-      "subline": "You can read some of my cool articles I wrote!",
+      "vigorStablecoin": "Vigor Stablecoin",
+      "getInvolvedHero-title-row1": "A Borrow and Earn Community",
+      "getInvolvedHero-title-row2": "100% Decentralized Peer to Peer Lending.",
       "backToHome": "Back to home",
       "faq": "Frequently asked Questions",
       "faqShort": "FAQ",
@@ -20,6 +21,8 @@
       "serviceFee": "Service Fee",
       "creditScore": "Credit Score",
       "estRepaymentAmount": "Est. Repayment Amount",
+      "insuranceCollateralAmount": "Insurance Collateral Amount",
+      "investmentAmount": "Investment Amount",
       "getInvolved": "Get Involved",
       "readTheWhitepaper": "Read The Whitepaper",
       "borrowLendInsure-subtitle": "Borrow, lend, insure, and vote through open source smart contracts.",
@@ -29,8 +32,9 @@
   },
   "de": {
     "translation": {
-      "hello": "Hallo und herzlich Willkommen zu dieser i18n Beispielseite!",
-      "subline": "Lies doch ein paar coole Artikel von mir!",
+      "vigorStablecoin": "Vigor Stablecoin",
+      "getInvolvedHero-title-row1": "A Borrow and Earn Community",
+      "getInvolvedHero-title-row2": "100% Decentralized Peer to Peer Lending.",
       "backToHome": "Zurück zur Startseite",
       "faq": "Oft gestellte Fragen",
       "faqShort": "FAQ",
@@ -48,6 +52,7 @@
       "serviceFee": "Gebühren",
       "creditScore": "Kredit Score",
       "estRepaymentAmount": "Erwartete Rückzahlung",
+      "investmentAmount": "Investition",
       "getInvolved": "Engagier Dich",
       "joinBuildEarn-title": "Join. Build. Earn.",
       "joinBuildEarn-content": "The Vigor Stablecoin project is governed by a DAC, (Decentralized Autonomous Community) whose goal is to build and deploy the Vigor Project based on the specifications of the Vigor Whitepaper."

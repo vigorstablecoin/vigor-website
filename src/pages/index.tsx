@@ -19,12 +19,12 @@ const Index: React.FC<{}> = (props) => {
       <Grid>
         <Grid.Unit size={{ md: 1 / 2 }}>
           <Hero
-            title={ t(`Vigor Stablecoin`) }
+            title={ t(`vigorStablecoin`) }
             content={
               <>
-                { t(`A Borrow and Earn Community.`) }
+                { t(`getInvolvedHero-title-row1`) }
                 <br/>
-                { t(`100% Decentralized, Peer to Peer Lending.`) }
+                { t(`getInvolvedHero-title-row2`) }
               </>
             }
             link={ <LocalizedLink to={ '/community' }>{ t(`getInvolved`) }</LocalizedLink> }

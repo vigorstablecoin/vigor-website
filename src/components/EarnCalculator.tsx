@@ -9,18 +9,6 @@ const BorrowCalculatorWrap = styled.div`
   flex-direction: column;
 `;
 
-const AmountWrap = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-const AmountInputWrap = styled.div`
-  width: 50%;
-  &:last-child {
-    margin-left: 16px;
-  }
-`;
-
 const AmountInputLabel = styled.label`
   display: block;
   font-size: 14px;
@@ -98,37 +86,27 @@ const RepaymentAmount = styled(ResultLabel)`
   color: ${ props => props.theme.colors.primaryLighter };
 `;
 
-function calculate(loanAmount: number, loanCurrency: string, collateralAmount: number, collateralCurrency: string, dummyData: any): Results {
-  const loanCurrencyRate = dummyData.exchangeRates.USD[loanCurrency];
+function calculate(collateralAmount: number, collateralCurrency: string, dummyData: any): Results {
   const collateralCurrencyRate = dummyData.exchangeRates.USD[collateralCurrency];
-
-  const loanValue = loanCurrencyRate * loanAmount;
   const collateralValue = collateralCurrencyRate * collateralAmount;
 
-  const ltv = loanValue / collateralValue * 100;
-  const interestRate = 4; // @todo: get rate from somewhere
-  const serviceFee = 0; // @todo: service fee?
-  const creditScore = ltv * 5; // @todo: calculate? currency?
-  const repaymentAmount = loanValue + (loanValue * (interestRate / 100));
+  const interestRate = 3.4; // @todo: get rate from somewhere
+  const repaymentAmount = collateralValue + (collateralValue * (interestRate / 100));
 
   return {
-    ltv,
+    investmentAmount: collateralValue,
     interestRate,
-    serviceFee,
-    creditScore,
     repaymentAmount,
   };
 }
 
 interface Results {
-  ltv: number;
+  investmentAmount: number,
   interestRate: number;
-  serviceFee: number;
-  creditScore: number;
   repaymentAmount: number;
 }
 
-const BorrowCalculator: React.FC = props => {
+const EarnCalculator: React.FC = props => {
   const { t } = useTranslation();
 
   // @todo: replace dummy data with actual data source
@@ -152,62 +130,33 @@ const BorrowCalculator: React.FC = props => {
     }
   });
 
-  const [ loanAmount, setLoanAmount ] = useState<number>(1000);
-  const [ collateralAmount, setCollateralAmount ] = useState<number>(0.5);
-
-  const [ loanCurrency, setLoanCurrency ] = useState<string>('VIGOR');
+  const [ collateralAmount, setCollateralAmount ] = useState<number>(150);
   const [ collateralCurrency, setCollateralCurrency ] = useState<string>('EOS');
 
-  const { ltv, interestRate, serviceFee, creditScore, repaymentAmount } = calculate(loanAmount, loanCurrency, collateralAmount, collateralCurrency, dummyData);
+  const { investmentAmount, interestRate, repaymentAmount } = calculate(collateralAmount, collateralCurrency, dummyData);
 
   return (
     <BorrowCalculatorWrap>
-      <AmountWrap>
-        <AmountInputWrap>
-          <AmountInputLabel htmlFor="loanAmount">{ t(`loanAmount`) }</AmountInputLabel>
-          <FlexRow>
-            <StyledInput type="number" id="loanAmount" name="loanAmount" autoComplete="off"
-                         value={loanAmount}
-                         onChange={(e) => setLoanAmount(Number(e.target.value))}
-            />
-            <StyledSelect value={loanCurrency}
-                          onChange={(e) => setLoanCurrency(e.target.value)}
-            >
-              <option value="VIGOR">VIGOR</option>
-            </StyledSelect>
-          </FlexRow>
-        </AmountInputWrap>
-        <AmountInputWrap>
-          <AmountInputLabel>{ t(`collateralAmount`) }</AmountInputLabel>
-          <FlexRow>
-            <StyledInput type="number" id="collateralAmount" name="collateralAmount" autoComplete="off"
-                         value={collateralAmount}
-                         onChange={(e) => setCollateralAmount(Number(e.target.value))}
-            />
-            <StyledSelect value={collateralCurrency}
-                          onChange={(e) => setCollateralCurrency(e.target.value)}
-            >
-              <option value="EOS">EOS</option>
-            </StyledSelect>
-          </FlexRow>
-        </AmountInputWrap>
-      </AmountWrap>
+        <AmountInputLabel>{ t(`insuranceCollateralAmount`) }</AmountInputLabel>
+        <FlexRowSpaceBetween>
+          <StyledInput type="number" id="insuranceCollateralAmount" name="insuranceCollateralAmount" autoComplete="off"
+                       value={collateralAmount}
+                       onChange={(e) => setCollateralAmount(Number(e.target.value))}
+          />
+          <StyledSelect value={collateralCurrency}
+                        onChange={(e) => setCollateralCurrency(e.target.value)}
+          >
+            <option value="EOS">EOS</option>
+          </StyledSelect>
+        </FlexRowSpaceBetween>
       <ResultWrap>
         <FlexRowSpaceBetween>
-          <ResultLabel>{ t(`loanToValue`) }</ResultLabel>
-          <ResultValue>{ Math.round(ltv * 100) / 100 }%</ResultValue>
+          <ResultLabel>{ t(`investmentAmount`) }</ResultLabel>
+          <ResultValue>${ Math.round(investmentAmount * 100) / 100 }</ResultValue>
         </FlexRowSpaceBetween>
         <FlexRowSpaceBetween>
           <ResultLabel>{ t(`interestRate`) }</ResultLabel>
           <ResultValue>{ Math.round(interestRate * 100) / 100 }%</ResultValue>
-        </FlexRowSpaceBetween>
-        <FlexRowSpaceBetween>
-          <ResultLabel>{ t(`serviceFee`) }</ResultLabel>
-          <ResultValue>{ serviceFee === 0 ? 'No Fees' : Math.round(serviceFee * 100) / 100 }</ResultValue>
-        </FlexRowSpaceBetween>
-        <FlexRowSpaceBetween>
-          <ResultLabel>{ t(`creditScore`) }</ResultLabel>
-          <ResultValue>{ Math.round(creditScore) }</ResultValue>
         </FlexRowSpaceBetween>
         <Divider/>
         <FlexRowSpaceBetween>
@@ -222,4 +171,4 @@ const BorrowCalculator: React.FC = props => {
   );
 };
 
-export default BorrowCalculator;
+export default EarnCalculator;

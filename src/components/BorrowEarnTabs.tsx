@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import BorrowCalculator from '../components/BorrowCalculator';
-import ComingSoon from '../components/ComingSoon';
+import EarnCalculator from './EarnCalculator';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 const CalculatorWrap = styled.div`
@@ -73,7 +73,7 @@ const BorrowEarnTabs: React.FC = props => {
             <BorrowCalculator/>
           </StyledTabPanel>
           <StyledTabPanel>
-            <ComingSoon/>
+            <EarnCalculator/>
           </StyledTabPanel>
         </StyledTabs>
     </CalculatorWrap>
