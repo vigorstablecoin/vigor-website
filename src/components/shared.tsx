@@ -105,10 +105,7 @@ type FlexRowProps = {
 const FlexRowStyle = styled.div`
   display: flex;
   width: 100%;
-  
-  &:not(:last-of-type) {
-    margin-bottom: 8px;
-  }
+  margin-bottom: 8px;
 `;
 
 const FlexRowSpaceBetweenStyle = styled(FlexRowStyle)`

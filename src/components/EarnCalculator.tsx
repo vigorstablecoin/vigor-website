@@ -108,18 +108,18 @@ const EarnCalculator: React.FC = props => {
 
   return (
     <BorrowCalculatorWrap>
-        <AmountInputLabel>{ t(`insuranceCollateralAmount`) }</AmountInputLabel>
-        <FlexRow as="spaceBetween">
-          <StyledInput as="number" id="insuranceCollateralAmount" name="insuranceCollateralAmount" autoComplete="off"
-                       value={collateralAmount}
-                       onChange={(e) => setCollateralAmount(Number(e.target.value))}
-          />
-          <StyledInput as="select" value={collateralCurrency}
-                        onChange={(e) => setCollateralCurrency(e.target.value)}
-          >
-            <option value="EOS">EOS</option>
-          </StyledInput>
-        </FlexRow>
+      <AmountInputLabel>{ t(`insuranceCollateralAmount`) }</AmountInputLabel>
+      <FlexRow as="spaceBetween">
+        <StyledInput as="number" id="insuranceCollateralAmount" name="insuranceCollateralAmount" autoComplete="off"
+                     value={collateralAmount}
+                     onChange={(e) => setCollateralAmount(Number(e.target.value))}
+        />
+        <StyledInput as="select" value={collateralCurrency}
+                      onChange={(e) => setCollateralCurrency(e.target.value)}
+        >
+          <option value="EOS">EOS</option>
+        </StyledInput>
+      </FlexRow>
       <ResultWrap>
         <FlexRow as="spaceBetween">
           <ResultLabel>{ t(`investmentAmount`) }</ResultLabel>
