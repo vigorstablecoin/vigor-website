@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import LocalizedLink from "./LocalizedLink";
 import VigorLogoText from "./VigorLogoText";
 import LanguageDropdown from "./LanguageDropdown";
-import { BlueButton } from "./shared";
+import { BlueButton } from "./shared/";
 
 const StyledLocalizedLink = styled(LocalizedLink)`
   font-size: 15px;

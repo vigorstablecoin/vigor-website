@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
-import { BlueButton, StyledInput, FlexRow } from './shared';
+import { BlueButton, StyledInput, FlexRow } from './shared/';
 
 const BorrowCalculatorWrap = styled.div`
   height: 100%;
