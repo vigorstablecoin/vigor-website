@@ -52,6 +52,11 @@ const RepaymentAmount = styled(ResultLabel)`
   color: ${ props => props.theme.colors.primaryLighter };
 `;
 
+const Remark = styled.div`
+  font-weight: 400;
+  font-size: 12px;
+`;
+
 function calculate(collateralAmount: number, collateralCurrency: string, dummyData: any): Results {
   const collateralCurrencyRate = dummyData.exchangeRates.USD[collateralCurrency];
   const collateralValue = collateralCurrencyRate * collateralAmount;
@@ -121,9 +126,12 @@ const EarnCalculator: React.FC = props => {
           <ResultValue>${ Math.round(investmentAmount * 100) / 100 }</ResultValue>
         </FlexRow>
         <FlexRow as="spaceBetween">
-          <ResultLabel>{ t(`interestRate`) }</ResultLabel>
+          <ResultLabel>{ t(`interestRate`) }*</ResultLabel>
           <ResultValue>{ Math.round(interestRate * 100) / 100 }%</ResultValue>
         </FlexRow>
+        <Remark>
+          *{ t(`earnCalc-interestRateNote`) }
+        </Remark>
         <Divider/>
         <FlexRow as="spaceBetween">
           <ResultLabel>{ t(`estRepaymentAmount`) }</ResultLabel>

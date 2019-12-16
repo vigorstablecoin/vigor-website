@@ -23,6 +23,7 @@
       "estRepaymentAmount": "Est. Repayment Amount",
       "insuranceCollateralAmount": "Insurance Collateral Amount",
       "investmentAmount": "Investment Amount",
+      "earnCalc-interestRateNote": "All interest rates variable based on market supply and demand of Borrowers and Insurers, and the volatility of risk-based collateral.",
       "getInvolved": "Get Involved",
       "readTheWhitepaper": "Read The Whitepaper",
       "borrowLendInsure-subtitle": "Borrow, lend, insure, and vote through open source smart contracts.",
@@ -53,10 +54,10 @@
       "creditScore": "Kredit Score",
       "estRepaymentAmount": "Erwartete Rückzahlung",
       "investmentAmount": "Investition",
+      "earnCalc-interestRateNote": "All interest rates variable based on market supply and demand of Borrowers and Insurers, and the volatility of risk-based collateral.",
       "getInvolved": "Engagier Dich",
       "joinBuildEarn-title": "Join. Build. Earn.",
       "joinBuildEarn-content": "The Vigor Stablecoin project is governed by a DAC, (Decentralized Autonomous Community) whose goal is to build and deploy the Vigor Project based on the specifications of the Vigor Whitepaper."
-
     }
   }
 }
