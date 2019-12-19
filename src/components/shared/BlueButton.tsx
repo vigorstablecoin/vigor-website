@@ -1,5 +1,5 @@
+import styled, {css} from "styled-components";
 import React from "react";
-import styled, { css } from "styled-components";
 
 const BlueButtonStyles = css`
   font-size: 14px;
