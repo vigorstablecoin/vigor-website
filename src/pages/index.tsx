@@ -35,20 +35,16 @@ const Index: React.FC<{}> = (props) => {
         </Grid.Unit>
       </Grid>
 
-      <Grid>
-        <JoinBuildEarn
-          title={ t(`joinBuildEarn-title`) }
-          content={ t(`joinBuildEarn-content`) }
-          link={ <LocalizedLink to={ '/community' }>{ t(`getInvolved`) }</LocalizedLink> } 
-        />
-      </Grid>
+      <JoinBuildEarn
+        title={ t(`joinBuildEarn-title`) }
+        content={ t(`joinBuildEarn-content`) }
+        link={ <LocalizedLink to={ '/community' }>{ t(`getInvolved`) }</LocalizedLink> }
+      />
 
-      <Grid>
-        <BorrowLendInsure
-          subtitle={ t(`borrowLendInsure-subtitle`) }
-          link={ <a href = { '../vigor.pdf' } target = "_blank">{ t(`readTheWhitepaper`) } <strong>&#8594;</strong></a> }
-        />
-      </Grid>
+      <BorrowLendInsure
+        subtitle={ t(`borrowLendInsure-subtitle`) }
+        link={ <a href = { '../vigor.pdf' } target = "_blank">{ t(`readTheWhitepaper`) } <strong>&#8594;</strong></a> }
+      />
     </React.Fragment>
   )
 };
