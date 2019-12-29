@@ -72,6 +72,7 @@ const TableRow = styled.div`
     
     & > ${TableColumnPrimary} {
       border-radius: 4px 4px 0 0;
+      padding-top: 35px;
     }
     
     & > ${TableColumnSecondary} {
@@ -84,7 +85,7 @@ const TableRow = styled.div`
     & > ${TableColumnHeader} {
       border-radius: 0 0 0 4px;
       margin-bottom: 52px;
-      padding-bottom: 42px;
+      padding-bottom: 60px;
     }
     
     & > ${TableColumnPrimary} {
