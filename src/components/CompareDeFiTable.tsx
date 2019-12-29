@@ -4,6 +4,53 @@ import { useTranslation } from 'react-i18next';
 
 const TableWrap = styled.div`
   font-weight: 400;
+  margin-bottom: 80px;
+`;
+
+const TableColumn = styled.div`
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  text-align: center;
+  
+  margin-left: 2px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  
+  background-color: ${({ theme }) => theme.colors.bgLighter};
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}px) {
+    order: 2;
+  }
+`;
+
+const TableColumnHeader = styled(TableColumn)`
+  margin-left: 0;
+  font-size: 15px;
+  color: #BCBDC1;
+  line-height: 19px;
+  text-align: initial;
+  background-color: ${({ theme }) => theme.colors.bgLight};
+  
+  padding-left: 44px;
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}px) {
+    order: 1;
+  }
+`;
+
+const TableColumnPrimary = styled(TableColumn)`  
+  background-color: ${({ theme }) => theme.colors.primary};
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}px) {
+    order: 1;
+  }
+`;
+
+const TableColumnSecondary = styled(TableColumn)`
+  
 `;
 
 const TableRow = styled.div`
@@ -11,28 +58,43 @@ const TableRow = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-`;
-
-const TableColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-basis: 100%;
-  flex: 1;
   
-  @media (min-width: 768px) {
-    order: 2;
+  :not(:last-of-type):not(:first-of-type) {
+    border-bottom: 1px solid ${({ theme }) => theme.colors.bg}
   }
-`;
 
-const TableColumnHeader = styled(TableColumn)`
-  @media (min-width: 768px) {
-    order: 1;
+  :first-of-type {
+    & > ${TableColumnHeader} {
+      border-radius: 4px 0 0 0;
+      margin-top: 52px;
+      padding-top: 24px;
+    }
+    
+    & > ${TableColumnPrimary} {
+      border-radius: 4px 4px 0 0;
+    }
+    
+    & > ${TableColumnSecondary} {
+      border-radius: 4px 4px 0 0;
+      margin-top: 17px;
+    }
   }
-`;
-
-const TableColumnPrimary = styled(TableColumn)`
-  @media (min-width: 768px) {
-    order: 1;
+  
+  : last-of-type {
+    & > ${TableColumnHeader} {
+      border-radius: 0 0 0 4px;
+      margin-bottom: 52px;
+      padding-bottom: 42px;
+    }
+    
+    & > ${TableColumnPrimary} {
+      border-radius: 0 0 4px 4px;
+    }
+    
+    & > ${TableColumnSecondary} {
+      border-radius: 0 0 4px 4px;
+      margin-bottom: 17px;
+    }
   }
 `;
 
@@ -43,39 +105,39 @@ const CompareDeFiTable: React.FC = props => {
     <TableWrap role="table">
       <TableRow role="row">
         <TableColumnHeader role="rowheader"/>
-        <TableColumn role="cell">[ MKR LOGO ]</TableColumn>
+        <TableColumnSecondary role="cell">[ MKR LOGO ]</TableColumnSecondary>
         <TableColumnPrimary role="cell">[ VIG LOGO ]</TableColumnPrimary>
-        <TableColumn role="cell">[ EQUI LOGO ]</TableColumn>
+        <TableColumnSecondary role="cell">[ EQUI LOGO ]</TableColumnSecondary>
       </TableRow>
       <TableRow role="row">
         <TableColumnHeader role="rowheader">Stablecoin Token</TableColumnHeader>
-        <TableColumn role="cell">DAI</TableColumn>
+        <TableColumnSecondary role="cell">DAI</TableColumnSecondary>
         <TableColumnPrimary role="cell">VIGOR</TableColumnPrimary>
-        <TableColumn role="cell">EOSDT</TableColumn>
+        <TableColumnSecondary role="cell">EOSDT</TableColumnSecondary>
       </TableRow>
       <TableRow role="row">
         <TableColumnHeader role="rowheader">Fee Token</TableColumnHeader>
-        <TableColumn role="cell">MKR</TableColumn>
+        <TableColumnSecondary role="cell">MKR</TableColumnSecondary>
         <TableColumnPrimary role="cell">VIG</TableColumnPrimary>
-        <TableColumn role="cell">NUT</TableColumn>
+        <TableColumnSecondary role="cell">NUT</TableColumnSecondary>
       </TableRow>
       <TableRow role="row">
         <TableColumnHeader role="rowheader">Collateral backed</TableColumnHeader>
-        <TableColumn role="cell">YES</TableColumn>
-        <TableColumnPrimary role="cell">YES</TableColumnPrimary>
-        <TableColumn role="cell">YES</TableColumn>
+        <TableColumnSecondary role="cell">[ YES ]</TableColumnSecondary>
+        <TableColumnPrimary role="cell">[ YES ]</TableColumnPrimary>
+        <TableColumnSecondary role="cell">[ YES ]</TableColumnSecondary>
       </TableRow>
       <TableRow role="row">
         <TableColumnHeader role="rowheader">Collateral Requirement</TableColumnHeader>
-        <TableColumn role="cell">150%</TableColumn>
+        <TableColumnSecondary role="cell">150%</TableColumnSecondary>
         <TableColumnPrimary role="cell">111%</TableColumnPrimary>
-        <TableColumn role="cell">130%</TableColumn>
+        <TableColumnSecondary role="cell">130%</TableColumnSecondary>
       </TableRow>
       <TableRow role="row">
         <TableColumnHeader role="rowheader">Short Selling</TableColumnHeader>
-        <TableColumn role="cell">NO</TableColumn>
-        <TableColumnPrimary role="cell">YES</TableColumnPrimary>
-        <TableColumn role="cell">NO</TableColumn>
+        <TableColumnSecondary role="cell">[ NO ]</TableColumnSecondary>
+        <TableColumnPrimary role="cell">[ YES ]</TableColumnPrimary>
+        <TableColumnSecondary role="cell">[ NO ]</TableColumnSecondary>
       </TableRow>
     </TableWrap>
   );

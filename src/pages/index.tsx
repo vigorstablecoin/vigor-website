@@ -8,6 +8,11 @@ import BorrowLendInsure  from '../components/BorrowLendInsure';
 import CompareDeFiTable  from '../components/CompareDeFiTable';
 // @ts-ignore
 import Grid from 'styled-components-grid';
+import styled from "styled-components";
+
+const GridCentered = styled(Grid)`
+  justify-content: center;
+`;
 
 const Index: React.FC<{}> = (props) => {
   const { t } = useTranslation();
@@ -44,11 +49,11 @@ const Index: React.FC<{}> = (props) => {
         link={ <a href = { '../vigor.pdf' } target = "_blank">{ t(`readTheWhitepaper`) } <strong>&#8594;</strong></a> }
       />
 
-      <Grid>
+      <GridCentered>
         <Grid.Unit size={10/12}>
           <CompareDeFiTable/>
         </Grid.Unit>
-      </Grid>
+      </GridCentered>
     </React.Fragment>
   )
 };
