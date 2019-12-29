@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
+import {media} from "../utils/breakpoints";
 
 const TableWrap = styled.div`
   font-weight: 400;
@@ -21,7 +22,7 @@ const TableColumn = styled.div`
   
   background-color: ${({ theme }) => theme.colors.bgLighter};
   
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}px) {
+  ${media.lessThan('sm-max')} {
     order: 2;
   }
 `;
@@ -36,7 +37,7 @@ const TableColumnHeader = styled(TableColumn)`
   
   padding-left: 44px;
   
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}px) {
+  ${media.lessThan('sm-max')} {
     order: 1;
   }
 `;
@@ -44,7 +45,7 @@ const TableColumnHeader = styled(TableColumn)`
 const TableColumnPrimary = styled(TableColumn)`  
   background-color: ${({ theme }) => theme.colors.primary};
   
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}px) {
+  ${media.lessThan('sm-max')} {
     order: 1;
   }
 `;

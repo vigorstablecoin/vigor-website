@@ -1,3 +1,5 @@
+import { DefaultTheme } from 'styled-components'
+
 // TODO: get actual colors from https://github.com/vigorstablecoin/media/blob/master/readme-images/vigor-color-palette.jpg
 const white = '#ffffff';
 const bg = '#13161E';
@@ -33,16 +35,17 @@ const colors = {
 };
 
 const breakpoints = {
-  xs: 0,
-  sm: 576,
-  md: 768,
-  lg: 992,
-  xl: 1200
+  xs: 492,
+  sm: 720,
+  md: 996,
+  lg: 1216,
+  xl: 1720
 };
 
-const theme = {
+const theme: DefaultTheme = {
+  borderRadius: '4px',
   colors,
-  breakpoints
+  breakpoints,
 };
 
 export default theme;
