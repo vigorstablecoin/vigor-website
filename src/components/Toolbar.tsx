@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import LocalizedLink from "./LocalizedLink";
-import VigorLogoText from "./VigorLogoText";
+import VigorLogo from "./VigorLogo";
 import LanguageDropdown from "./LanguageDropdown";
 import { BlueButton } from "./shared/";
 
@@ -38,7 +38,7 @@ const Toolbar: React.FC<GlobalProps> = props => {
   return (
     <Wrapper>
       <StyledLocalizedLink to="/">
-        <VigorLogoText height={55} />
+        <VigorLogo height={55} inverted={true} primary={true} horizontal={true} />
       </StyledLocalizedLink>
       <Spacer />
       <NavBlock>

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import {media} from "../utils/breakpoints";
+import VigorLogo from "./VigorLogo";
 
 const TableWrap = styled.div`
   font-weight: 400;
@@ -108,7 +109,9 @@ const CompareDeFiTable: React.FC = props => {
       <TableRow role="row">
         <TableColumnHeader role="rowheader"/>
         <TableColumnSecondary role="cell">[ MKR LOGO ]</TableColumnSecondary>
-        <TableColumnPrimary role="cell">[ VIG LOGO ]</TableColumnPrimary>
+        <TableColumnPrimary role="cell">
+          <VigorLogo height={55} inverted={true} primary={true} horizontal={true} />
+        </TableColumnPrimary>
         <TableColumnSecondary role="cell">[ EQUI LOGO ]</TableColumnSecondary>
       </TableRow>
       <TableRow role="row">
@@ -125,9 +128,9 @@ const CompareDeFiTable: React.FC = props => {
       </TableRow>
       <TableRow role="row">
         <TableColumnHeader role="rowheader">Collateral backed</TableColumnHeader>
-        <TableColumnSecondary role="cell">[ YES ]</TableColumnSecondary>
-        <TableColumnPrimary role="cell">[ YES ]</TableColumnPrimary>
-        <TableColumnSecondary role="cell">[ YES ]</TableColumnSecondary>
+        <TableColumnSecondary role="cell">[ X ]</TableColumnSecondary>
+        <TableColumnPrimary role="cell">[ X ]</TableColumnPrimary>
+        <TableColumnSecondary role="cell">[ X ]</TableColumnSecondary>
       </TableRow>
       <TableRow role="row">
         <TableColumnHeader role="rowheader">Collateral Requirement</TableColumnHeader>
@@ -136,10 +139,40 @@ const CompareDeFiTable: React.FC = props => {
         <TableColumnSecondary role="cell">130%</TableColumnSecondary>
       </TableRow>
       <TableRow role="row">
+        <TableColumnHeader role="rowheader">Borrow Stablecoin</TableColumnHeader>
+        <TableColumnSecondary role="cell">[ X ]</TableColumnSecondary>
+        <TableColumnPrimary role="cell">[ X ]</TableColumnPrimary>
+        <TableColumnSecondary role="cell">[ X ]</TableColumnSecondary>
+      </TableRow>
+      <TableRow role="row">
         <TableColumnHeader role="rowheader">Short Selling</TableColumnHeader>
-        <TableColumnSecondary role="cell">[ NO ]</TableColumnSecondary>
-        <TableColumnPrimary role="cell">[ YES ]</TableColumnPrimary>
-        <TableColumnSecondary role="cell">[ NO ]</TableColumnSecondary>
+        <TableColumnSecondary role="cell">[ - ]</TableColumnSecondary>
+        <TableColumnPrimary role="cell">[ X ]</TableColumnPrimary>
+        <TableColumnSecondary role="cell">[ - ]</TableColumnSecondary>
+      </TableRow>
+      <TableRow role="row">
+        <TableColumnHeader role="rowheader">Bailout Mechanism</TableColumnHeader>
+        <TableColumnSecondary role="cell">Auction</TableColumnSecondary>
+        <TableColumnPrimary role="cell">Automatic</TableColumnPrimary>
+        <TableColumnSecondary role="cell">Auction</TableColumnSecondary>
+      </TableRow>
+      <TableRow role="row">
+        <TableColumnHeader role="rowheader">Onchain Price Discovery</TableColumnHeader>
+        <TableColumnSecondary role="cell">[ - ]</TableColumnSecondary>
+        <TableColumnPrimary role="cell">[ X ]</TableColumnPrimary>
+        <TableColumnSecondary role="cell">[ - ]</TableColumnSecondary>
+      </TableRow>
+      <TableRow role="row">
+        <TableColumnHeader role="rowheader">Risk Modeling & Compliance</TableColumnHeader>
+        <TableColumnSecondary role="cell">[ - ]</TableColumnSecondary>
+        <TableColumnPrimary role="cell">[ X ]</TableColumnPrimary>
+        <TableColumnSecondary role="cell">[ - ]</TableColumnSecondary>
+      </TableRow>
+      <TableRow role="row">
+        <TableColumnHeader role="rowheader">Stress Test Modeling</TableColumnHeader>
+        <TableColumnSecondary role="cell">[ - ]</TableColumnSecondary>
+        <TableColumnPrimary role="cell">[ X ]</TableColumnPrimary>
+        <TableColumnSecondary role="cell">[ - ]</TableColumnSecondary>
       </TableRow>
     </TableWrap>
   );
