@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import { media } from "../utils/breakpoints";
@@ -61,7 +61,7 @@ const TableColumnSecondary = styled(TableColumn)`
   ${media.lessThan('xs-max')} {
     font-size: 14px;
     
-    :last-of-type {
+    &.hidden {
       display: none;
     }
   }
@@ -77,7 +77,7 @@ const TableRow = styled.div`
     border-bottom: 1px solid ${({ theme }) => theme.colors.bg}
   }
 
-  :first-of-type {
+  &.first {
     & > ${TableColumnHeader} {
       border-radius: 4px 0 0 0;
       margin-top: 52px;
@@ -95,7 +95,7 @@ const TableRow = styled.div`
     }
   }
   
-  : last-of-type {
+  &.last {
     & > ${TableColumnHeader} {
       border-radius: 0 0 0 4px;
       margin-bottom: 52px;
@@ -113,79 +113,123 @@ const TableRow = styled.div`
   }
 `;
 
+const TableFooter = styled(TableRow)`
+  display: none;
+  justify-content: space-around;
+  
+  ${media.lessThan('xs-max')} {
+    display: flex;
+  }
+`;
+
+const PagingButton = styled.button`
+  border-radius: 100%;
+  background-color: ${({ theme }) => theme.colors.primary};
+  width: 10px;
+  height: 10px;
+  
+  &:last-of-type {
+    margin-left: 10px;
+    margin-right: 15px;
+  }
+  
+  &:disabled {
+    background-color: ${({ theme }) => theme.colors.light};
+    cursor: initial;
+  }
+`;
+
+function showNextColumn(targetElement: EventTarget) {
+  console.log('next column', targetElement);
+}
+
+function showPrevColumn(targetElement: EventTarget) {
+  console.log('prev column', targetElement);
+}
+
 const CompareDeFiTable: React.FC = props => {
+  const [ currentColumn, setCurrentColumn ] = useState(0);
   const { t } = useTranslation();
 
   return (
     <TableWrap role="table">
-      <TableRow role="row">
+      <TableRow role="row" className="first">
         <TableColumnHeader role="rowheader"/>
-        <TableColumnSecondary role="cell">[ MKR LOGO ]</TableColumnSecondary>
+        <TableColumnSecondary role="cell" className={ currentColumn === 1 ? 'hidden' : '' }>[ MKR LOGO ]</TableColumnSecondary>
         <TableColumnPrimary role="cell">
           <VigorLogo height={55} inverted={true} primary={true} horizontal={true} />
         </TableColumnPrimary>
-        <TableColumnSecondary role="cell">[ EQUI LOGO ]</TableColumnSecondary>
+        <TableColumnSecondary role="cell" className={ currentColumn === 0 ? 'hidden' : '' }>[ EQUI LOGO ]</TableColumnSecondary>
       </TableRow>
       <TableRow role="row">
         <TableColumnHeader role="rowheader">Stablecoin Token</TableColumnHeader>
-        <TableColumnSecondary role="cell">DAI</TableColumnSecondary>
+        <TableColumnSecondary role="cell" className={ currentColumn === 1 ? 'hidden' : '' }>DAI</TableColumnSecondary>
         <TableColumnPrimary role="cell">VIGOR</TableColumnPrimary>
-        <TableColumnSecondary role="cell">EOSDT</TableColumnSecondary>
+        <TableColumnSecondary role="cell" className={ currentColumn === 0 ? 'hidden' : '' }>EOSDT</TableColumnSecondary>
       </TableRow>
       <TableRow role="row">
         <TableColumnHeader role="rowheader">Fee Token</TableColumnHeader>
-        <TableColumnSecondary role="cell">MKR</TableColumnSecondary>
+        <TableColumnSecondary role="cell" className={ currentColumn === 1 ? 'hidden' : '' }>MKR</TableColumnSecondary>
         <TableColumnPrimary role="cell">VIG</TableColumnPrimary>
-        <TableColumnSecondary role="cell">NUT</TableColumnSecondary>
+        <TableColumnSecondary role="cell" className={ currentColumn === 0 ? 'hidden' : '' }>NUT</TableColumnSecondary>
       </TableRow>
       <TableRow role="row">
         <TableColumnHeader role="rowheader">Collateral backed</TableColumnHeader>
-        <TableColumnSecondary role="cell">[ X ]</TableColumnSecondary>
+        <TableColumnSecondary role="cell" className={ currentColumn === 1 ? 'hidden' : '' }>[ X ]</TableColumnSecondary>
         <TableColumnPrimary role="cell">[ X ]</TableColumnPrimary>
-        <TableColumnSecondary role="cell">[ X ]</TableColumnSecondary>
+        <TableColumnSecondary role="cell" className={ currentColumn === 0 ? 'hidden' : '' }>[ X ]</TableColumnSecondary>
       </TableRow>
       <TableRow role="row">
         <TableColumnHeader role="rowheader">Collateral Requirement</TableColumnHeader>
-        <TableColumnSecondary role="cell">150%</TableColumnSecondary>
+        <TableColumnSecondary role="cell" className={ currentColumn === 1 ? 'hidden' : '' }>150%</TableColumnSecondary>
         <TableColumnPrimary role="cell">111%</TableColumnPrimary>
-        <TableColumnSecondary role="cell">130%</TableColumnSecondary>
+        <TableColumnSecondary role="cell" className={ currentColumn === 0 ? 'hidden' : '' }>130%</TableColumnSecondary>
       </TableRow>
       <TableRow role="row">
         <TableColumnHeader role="rowheader">Borrow Stablecoin</TableColumnHeader>
-        <TableColumnSecondary role="cell">[ X ]</TableColumnSecondary>
+        <TableColumnSecondary role="cell" className={ currentColumn === 1 ? 'hidden' : '' }>[ X ]</TableColumnSecondary>
         <TableColumnPrimary role="cell">[ X ]</TableColumnPrimary>
-        <TableColumnSecondary role="cell">[ X ]</TableColumnSecondary>
+        <TableColumnSecondary role="cell" className={ currentColumn === 0 ? 'hidden' : '' }>[ X ]</TableColumnSecondary>
       </TableRow>
       <TableRow role="row">
         <TableColumnHeader role="rowheader">Short Selling</TableColumnHeader>
-        <TableColumnSecondary role="cell">[ - ]</TableColumnSecondary>
+        <TableColumnSecondary role="cell" className={ currentColumn === 1 ? 'hidden' : '' }>[ - ]</TableColumnSecondary>
         <TableColumnPrimary role="cell">[ X ]</TableColumnPrimary>
-        <TableColumnSecondary role="cell">[ - ]</TableColumnSecondary>
+        <TableColumnSecondary role="cell" className={ currentColumn === 0 ? 'hidden' : '' }>[ - ]</TableColumnSecondary>
       </TableRow>
       <TableRow role="row">
         <TableColumnHeader role="rowheader">Bailout Mechanism</TableColumnHeader>
-        <TableColumnSecondary role="cell">Auction</TableColumnSecondary>
+        <TableColumnSecondary role="cell" className={ currentColumn === 1 ? 'hidden' : '' }>Auction</TableColumnSecondary>
         <TableColumnPrimary role="cell">Automatic</TableColumnPrimary>
-        <TableColumnSecondary role="cell">Auction</TableColumnSecondary>
+        <TableColumnSecondary role="cell" className={ currentColumn === 0 ? 'hidden' : '' }>Auction</TableColumnSecondary>
       </TableRow>
       <TableRow role="row">
         <TableColumnHeader role="rowheader">Onchain Price Discovery</TableColumnHeader>
-        <TableColumnSecondary role="cell">[ - ]</TableColumnSecondary>
+        <TableColumnSecondary role="cell" className={ currentColumn === 1 ? 'hidden' : '' }>[ - ]</TableColumnSecondary>
         <TableColumnPrimary role="cell">[ X ]</TableColumnPrimary>
-        <TableColumnSecondary role="cell">[ - ]</TableColumnSecondary>
+        <TableColumnSecondary role="cell" className={ currentColumn === 0 ? 'hidden' : '' }>[ - ]</TableColumnSecondary>
       </TableRow>
       <TableRow role="row">
         <TableColumnHeader role="rowheader">Risk Modeling & Compliance</TableColumnHeader>
-        <TableColumnSecondary role="cell">[ - ]</TableColumnSecondary>
+        <TableColumnSecondary role="cell" className={ currentColumn === 1 ? 'hidden' : '' }>[ - ]</TableColumnSecondary>
         <TableColumnPrimary role="cell">[ X ]</TableColumnPrimary>
-        <TableColumnSecondary role="cell">[ - ]</TableColumnSecondary>
+        <TableColumnSecondary role="cell" className={ currentColumn === 0 ? 'hidden' : '' }>[ - ]</TableColumnSecondary>
       </TableRow>
-      <TableRow role="row">
+      <TableRow role="row" className="last">
         <TableColumnHeader role="rowheader">Stress Test Modeling</TableColumnHeader>
-        <TableColumnSecondary role="cell">[ - ]</TableColumnSecondary>
+        <TableColumnSecondary role="cell" className={ currentColumn === 1 ? 'hidden' : '' }>[ - ]</TableColumnSecondary>
         <TableColumnPrimary role="cell">[ X ]</TableColumnPrimary>
-        <TableColumnSecondary role="cell">[ - ]</TableColumnSecondary>
+        <TableColumnSecondary role="cell" className={ currentColumn === 0 ? 'hidden' : '' }>[ - ]</TableColumnSecondary>
       </TableRow>
+      <TableFooter>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>
+          <PagingButton disabled={ currentColumn === 0} onClick={ () => setCurrentColumn(0) }/>
+          <PagingButton disabled={ currentColumn === 1 } onClick={ () => setCurrentColumn(1) }/>
+        </div>
+      </TableFooter>
     </TableWrap>
   );
 };
