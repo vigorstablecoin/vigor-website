@@ -38,7 +38,7 @@ const Toolbar: React.FC<GlobalProps> = props => {
   return (
     <Wrapper>
       <StyledLocalizedLink to="/">
-        <VigorLogo height={55} inverted={true} primary={true} horizontal={true} />
+        <VigorLogo height={55} inverted={true} primary={true} horizontal={true} textOnly={true} />
       </StyledLocalizedLink>
       <Spacer />
       <NavBlock>

@@ -38,19 +38,27 @@ const Index: React.FC<{}> = (props) => {
         </Grid.Unit>
       </Grid>
 
-      <JoinBuildEarn
-        title={ t(`joinBuildEarn-title`) }
-        content={ t(`joinBuildEarn-content`) }
-        link={ <LocalizedLink to={ '/community' }>{ t(`getInvolved`) }</LocalizedLink> }
-      />
-
-      <BorrowLendInsure
-        subtitle={ t(`borrowLendInsure-subtitle`) }
-        link={ <a href = { '../vigor.pdf' } target = "_blank">{ t(`readTheWhitepaper`) } <strong>&#8594;</strong></a> }
-      />
-
       <GridCentered>
         <Grid.Unit size={10/12}>
+          <JoinBuildEarn
+            title={ t(`joinBuildEarn-title`) }
+            content={ t(`joinBuildEarn-content`) }
+            link={ <LocalizedLink to={ '/community' }>{ t(`getInvolved`) }</LocalizedLink> }
+          />
+        </Grid.Unit>
+      </GridCentered>
+
+      <GridCentered>
+        <Grid.Unit size={10 / 12}>
+          <BorrowLendInsure
+            subtitle={ t(`borrowLendInsure-subtitle`) }
+            link={ <a href = { '../vigor.pdf' } target = "_blank">{ t(`readTheWhitepaper`) } <strong>&#8594;</strong></a> }
+          />
+        </Grid.Unit>
+      </GridCentered>
+
+      <GridCentered>
+        <Grid.Unit size={{sm: 10 / 12}}>
           <CompareDeFiTable/>
         </Grid.Unit>
       </GridCentered>

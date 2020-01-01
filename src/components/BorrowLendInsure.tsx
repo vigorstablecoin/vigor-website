@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const JumbotronWrapper = styled.div`
   margin-top:152px;
-  padding: 16px;
 `;
 
 const JumbotronSubtitle = styled.h2`

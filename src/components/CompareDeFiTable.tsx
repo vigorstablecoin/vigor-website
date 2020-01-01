@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
-import {media} from "../utils/breakpoints";
+import { media } from "../utils/breakpoints";
 import VigorLogo from "./VigorLogo";
 
 const TableWrap = styled.div`
@@ -23,7 +23,7 @@ const TableColumn = styled.div`
   
   background-color: ${({ theme }) => theme.colors.bgLighter};
   
-  ${media.lessThan('sm-max')} {
+  ${media.lessThan('xs-max')} {
     order: 2;
   }
 `;
@@ -38,21 +38,33 @@ const TableColumnHeader = styled(TableColumn)`
   
   padding-left: 44px;
   
-  ${media.lessThan('sm-max')} {
+  ${media.lessThan('xs-max')} {
     order: 1;
+    font-size: 14px;
+    padding-left: 17px;
   }
 `;
 
 const TableColumnPrimary = styled(TableColumn)`  
   background-color: ${({ theme }) => theme.colors.primary};
+  font-size: 16px;
   
-  ${media.lessThan('sm-max')} {
+  ${media.lessThan('xs-max')} {
     order: 1;
+    font-size: 14px;
   }
 `;
 
 const TableColumnSecondary = styled(TableColumn)`
+  font-size: 16px;
   
+  ${media.lessThan('xs-max')} {
+    font-size: 14px;
+    
+    :last-of-type {
+      display: none;
+    }
+  }
 `;
 
 const TableRow = styled.div`
