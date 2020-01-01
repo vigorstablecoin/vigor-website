@@ -139,14 +139,6 @@ const PagingButton = styled.button`
   }
 `;
 
-function showNextColumn(targetElement: EventTarget) {
-  console.log('next column', targetElement);
-}
-
-function showPrevColumn(targetElement: EventTarget) {
-  console.log('prev column', targetElement);
-}
-
 const CompareDeFiTable: React.FC = props => {
   const [ currentColumn, setCurrentColumn ] = useState(0);
   const { t } = useTranslation();
