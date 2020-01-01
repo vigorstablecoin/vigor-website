@@ -211,20 +211,20 @@ const Footer: React.FC<{}> = props => {
             </LinkWithIcon>
             <SubSectionDivider />
             <SubHeader>{t(`footer.headerDocs`)}</SubHeader>
-            <LinkWithIcon href="/vigor.pdf" iconRight={<PdfIcon />}>
+            <LinkWithIcon href="/VIGOR_summary.pdf" iconRight={<PdfIcon />}>
               {t(`footer.linkDocsSummary`)}
             </LinkWithIcon>
-            <LinkWithIcon href="/vigor.pdf" iconRight={<PdfIcon />}>
+            <LinkWithIcon href="/VIGOR.pdf" iconRight={<PdfIcon />}>
               {t(`footer.linkDocsWPen`)}
             </LinkWithIcon>
-            <LinkWithIcon href="/vigor.pdf" iconRight={<PdfIcon />}>
+            <LinkWithIcon href="/VIGOR_Chinese.pdf" iconRight={<PdfIcon />}>
               {t(`footer.linkDocsWPzh`)}
             </LinkWithIcon>
-            <LinkWithIcon href="/vigor.pdf" iconRight={<PdfIcon />}>
+            <LinkWithIcon href="/VIGOR_Spanish.pdf" iconRight={<PdfIcon />}>
               {t(`footer.linkDocsWPes`)}
             </LinkWithIcon>
-            <LinkWithIcon href="/vigor.pdf" iconRight={<PdfIcon />}>
-              {t(`footer.linkDocsWPid`)}
+            <LinkWithIcon href="/VIGOR_French.pdf" iconRight={<PdfIcon />}>
+              {t(`footer.linkDocsWPfr`)}
             </LinkWithIcon>
           </Block>
         </Column>

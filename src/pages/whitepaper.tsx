@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import RedirectMessage from '../components/Redirect';
 
-const url = `https://vigor.ai/vigor.pdf`;
+const url = `../VIGOR.pdf`;
 const Whitepaper: React.FC<{}> = (props) => {
   useEffect(() => {
     if (typeof window !== `undefined`) {

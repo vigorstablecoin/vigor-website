@@ -44,7 +44,7 @@ const Index: React.FC<{}> = (props) => {
       <Grid>
         <BorrowLendInsure
           subtitle={ t(`borrowLendInsure-subtitle`) }
-          link={ <a href = { '../vigor.pdf' } target = "_blank">{ t(`readTheWhitepaper`) } <strong>&#8594;</strong></a> }
+          link={ <a href = { '../VIGOR.pdf' } target = "_blank">{ t(`readTheWhitepaper`) } <strong>&#8594;</strong></a> }
         />
       </Grid>
     </React.Fragment>
