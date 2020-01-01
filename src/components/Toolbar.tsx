@@ -5,11 +5,20 @@ import LocalizedLink from "./LocalizedLink";
 import VigorLogo from "./VigorLogo";
 import LanguageDropdown from "./LanguageDropdown";
 import { BlueButton } from "./shared/";
+import {media} from "../utils/breakpoints";
 
 const StyledLocalizedLink = styled(LocalizedLink)`
   font-size: 15px;
   line-height: 19px;
   margin-right: 48px;
+  
+  ${media.lessThan('md')} {
+    margin-right: 26px;
+  }
+  
+  ${media.lessThan('xs-max')} {
+    margin-right: 16px;
+  }
 `;
 
 const Wrapper = styled.div`
