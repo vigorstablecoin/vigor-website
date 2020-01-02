@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import { BlueButton, StyledInput, FlexRow } from './shared/';
+import {media} from "../utils/breakpoints";
 
 const BorrowCalculatorWrap = styled.div`
   height: 100%;
@@ -10,14 +11,27 @@ const BorrowCalculatorWrap = styled.div`
 `;
 
 const AmountWrap = styled.div`
-  display: flex;
+  display: block;
   justify-content: space-between;
+  
+  ${media.lessThan('xs')} {
+    display: block;
+  }
 `;
 
 const AmountInputWrap = styled.div`
   width: 50%;
   &:last-child {
     margin-left: 16px;
+  }
+  
+  ${media.lessThan('xs')} {
+    width: 100%;
+    flex-shrink: 0;
+    
+    &:last-child {
+      margin-left: 0;
+    }
   }
 `;
 
@@ -136,7 +150,7 @@ const BorrowCalculator: React.FC = props => {
                          value={loanAmount}
                          onChange={(e) => setLoanAmount(Number(e.target.value))}
             />
-            <StyledInput as="select" value={loanCurrency}
+            <StyledInput as="select" value={loanCurrency} style={{ width: '92px' }}
                           onChange={(e) => setLoanCurrency(e.target.value)}
             >
               <option value="VIGOR">VIGOR</option>
@@ -150,7 +164,7 @@ const BorrowCalculator: React.FC = props => {
                          value={collateralAmount}
                          onChange={(e) => setCollateralAmount(Number(e.target.value))}
             />
-            <StyledInput as="select" value={collateralCurrency}
+            <StyledInput as="select" value={collateralCurrency} style={{ width: '92px' }}
                           onChange={(e) => setCollateralCurrency(e.target.value)}
             >
               <option value="EOS">EOS</option>

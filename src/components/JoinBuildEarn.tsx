@@ -26,7 +26,7 @@ const JumbotronContent = styled.p`
   line-height: 24px;
   font-weight: 500;
   margin: 16px auto 51px;
-  max-width: 58%;
+  max-width: 662px;
   text-align: center;
   color: ${props => props.theme.colors.primary};
 `;

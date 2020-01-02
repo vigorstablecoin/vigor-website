@@ -124,7 +124,7 @@ const TableFooter = styled(TableRow)`
 
 const PagingButton = styled.button`
   border-radius: 100%;
-  background-color: ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.light};
   width: 10px;
   height: 10px;
   
@@ -134,8 +134,8 @@ const PagingButton = styled.button`
   }
   
   &:disabled {
-    background-color: ${({ theme }) => theme.colors.light};
     cursor: initial;
+    background-color: ${({ theme }) => theme.colors.primary};
   }
 `;
 

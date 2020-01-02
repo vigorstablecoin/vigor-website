@@ -19,8 +19,8 @@ const Index: React.FC<{}> = (props) => {
 
   return (
     <React.Fragment>
-      <Grid>
-        <Grid.Unit size={{ md: 1 / 2 }}>
+      <GridCentered>
+        <Grid.Unit size={{sm: 10/12, md: 1 / 2 }}>
           <Hero
             title={ t(`vigorStablecoin`) }
             content={
@@ -33,10 +33,10 @@ const Index: React.FC<{}> = (props) => {
             link={ <LocalizedLink to={ '/community' }>{ t(`getInvolved`) }</LocalizedLink> }
           />
         </Grid.Unit>
-        <Grid.Unit size={{ md: 1 / 2 }}>
+        <Grid.Unit size={{sm: 10/12, md: 1 / 2 }}>
           <BorrowEarnTabs />
         </Grid.Unit>
-      </Grid>
+      </GridCentered>
 
       <GridCentered>
         <Grid.Unit size={10/12}>
