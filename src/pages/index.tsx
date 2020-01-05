@@ -7,9 +7,7 @@ import BorrowEarnTabs from '../components/BorrowEarnTabs';
 import JoinBuildEarn from "../components/JoinBuildEarn";
 import LocalizedLink from '../components/LocalizedLink';
 import BorrowLendInsure  from '../components/BorrowLendInsure';
-// @ts-ignore
 import Grid from 'styled-components-grid';
-
 
 const Index: React.FC<{}> = (props) => {
   const { t } = useTranslation();
@@ -46,7 +44,7 @@ const Index: React.FC<{}> = (props) => {
       <Grid>
         <BorrowLendInsure
           subtitle={ t(`borrowLendInsure-subtitle`) }
-          link={ <a href = { '../vigor.pdf' } target = "_blank">{ t(`readTheWhitepaper`) } <strong>&#8594;</strong></a> }
+          link={ <a href = { '../VIGOR.pdf' } target = "_blank">{ t(`readTheWhitepaper`) } <strong>&#8594;</strong></a> }
         />
       </Grid>
     </React.Fragment>

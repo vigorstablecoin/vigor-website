@@ -1,3 +1,4 @@
+// use two-letter ISO 639-1 https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes
 export type TLanguageCodes = `en` | `de` | `zh` | `ko`;
 
 export const supportedLanguageCodes:TLanguageCodes[] = [`en`, `de`, `zh`, `ko`];

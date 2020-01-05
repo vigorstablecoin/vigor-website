@@ -28,7 +28,29 @@
       "readTheWhitepaper": "Read The Whitepaper",
       "borrowLendInsure-subtitle": "Borrow, lend, insure, and vote through open source smart contracts.",
       "joinBuildEarn-title": "Join. Build. Earn.",
-      "joinBuildEarn-content": "The Vigor Stablecoin project is governed by a DAC, (Decentralized Autonomous Community) whose goal is to build and deploy the Vigor Project based on the specifications of the Vigor Whitepaper."
+      "joinBuildEarn-content": "The Vigor Stablecoin project is governed by a DAC, (Decentralized Autonomous Community) whose goal is to build and deploy the Vigor Project based on the specifications of the Vigor Whitepaper.",
+      "footer": {
+        "welcome": "Welcome to the future of Defi",
+        "headerTGPublic": "Vigor TG Public",
+        "headerTGPWG": "Vigor TG Working Groups",
+        "headerDACClients": "Vigor DAC Clients",
+        "headerDocs": "Vigor Key Documentation",
+        "linkTGVigorstablecoin": "vigorstablecoin",
+        "linkTGVigorGov": "VIGORgov",
+        "linkTGVigorDev": "VIGORdev",
+        "linkTGVigorMedia": "VIGORmedia",
+        "linkTGVigorWebsite": "VigorWebsiteWG",
+        "linkTGVigorMarketing": "vigormarketingandintegrations",
+        "linkVigorAI": "vigor.ai",
+        "linkVigAI": "vig.ai",
+        "linkVigstack": "vigstack.io",
+        "linkDocsSummary": "Summary",
+        "linkDocsWPen": "Whitepaper (English)",
+        "linkDocsWPzh": "Whitepaper (Chinese)",
+        "linkDocsWPes": "Whitepaper (Spanish)",
+        "linkDocsWPfr": "Whitepaper (French)",
+        "copyright": "Copyright © VIGOR stablecoin 2019"
+      }
     }
   },
   "de": {
