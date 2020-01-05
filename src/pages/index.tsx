@@ -8,6 +8,7 @@ import JoinBuildEarn from "../components/JoinBuildEarn";
 import LocalizedLink from '../components/LocalizedLink';
 import BorrowLendInsure  from '../components/BorrowLendInsure';
 import Grid from 'styled-components-grid';
+import Partners from '../components/Partners';
 
 const Index: React.FC<{}> = (props) => {
   const { t } = useTranslation();
@@ -46,6 +47,10 @@ const Index: React.FC<{}> = (props) => {
           subtitle={ t(`borrowLendInsure-subtitle`) }
           link={ <a href = { '../VIGOR.pdf' } target = "_blank">{ t(`readTheWhitepaper`) } <strong>&#8594;</strong></a> }
         />
+      </Grid>
+
+      <Grid>
+        <Partners />
       </Grid>
     </React.Fragment>
   )
